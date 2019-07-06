@@ -12,12 +12,21 @@
 
     <!-- Styles -->
     <link href="{{ url('home/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/2761ff5c1c9695ef26215d530201ad1c?family=Century725W01-Condensed" rel="stylesheet">
+
+    <style type="text/css">
+        body{
+            font-size: 25px;
+            font-family: 'Century725W01-Condensed', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <div id="app" style="overflow-x: hidden;">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
+                    <img src="{{ url('images/logo_komisariat.png') }}" class="img-responsive" style="max-width: 8vh; float: left;" alt="">
 
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
@@ -28,7 +37,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/') }}" style="color: #0F2C13">
                         HMI KOMISARIAT SAINS & TEKNOLOGI
                     </a>
                 </div>
@@ -43,8 +52,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}"><h4 style="color: white;">Login</h4></a></li>
+                            <li><a href="{{ route('register') }}"><h4 style="color: white;">Register</h4></a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>

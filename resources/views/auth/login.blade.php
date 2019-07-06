@@ -41,19 +41,19 @@
         
         <img src="{{ url('images/logo_hmi.png') }}" style="width: 25%; position: absolute; left: 45vw; top: 5vh; z-index: 9999;" alt="">
 
-        <center><h4 style="padding: 30px 110px;">Mari bergabung di HMI, untuk membina diri agar menjadi lebih baik yang berlandaskan Iman, Ilmu, dan Amal.</h4></center>
+        <center><h3 style="padding: 30px 110px; color: #0F2C13">Mari bergabung di HMI, untuk membina diri agar menjadi lebih baik yang berlandaskan Iman, Ilmu, dan Amal.</h3></center>
     </div>
 
-    <div class="col-md-6" style="background-color: green; min-height: 91vh;">
+    <div class="col-md-6" style="background-color: #0F2C13; min-height: 88vh;">
         <center>
-            <h3 style="margin: 0 180px; margin-top: 20vh; color: orange">"Strength grows in the moments when you think you can't go on but you keep going anyway."</h3>
+            <h2 style="margin: 0 180px; margin-top: 20vh; color: #D1BA91">"Strength grows in the moments when you think you can't go on but you keep going anyway."</h2>
             <br><br>
-            <button class="btn btn-default" style="padding: 15px 100px;">Daftar</button>
-            <br><br>
-            <b style="color: orange;">Kader Saintek?</b><a href="" style="color: white"> Masuk</a>
+            <button class="btn btn-default" style="padding: 10px 100px; background-color: #D1BA91"><h4>Daftar</h4></button>
+            <br>
+            <h5 style="color: white;">Kader Saintek?</h5><a href="" style="color: grey"><h5> Masuk</h5></a>
             <br>
         </center>
-        <b style="position: absolute; bottom: 0vh; right: 16vw; color: orange;">Berfikir Keras Lakukan dengan Cerdas</b>
+        <b style="position: absolute; bottom: 0vh; left: 12vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
 
         <!-- <div class="panel panel-default" style="margin: 30px 80px;">
             <div class="panel-heading">Login</div>

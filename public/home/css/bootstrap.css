@@ -4571,7 +4571,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default {
   /*background-color: white;
   border-color: white;*/
-  background: linear-gradient(90deg, white 50%, green 50%);
+  background: linear-gradient(90deg, white 50%, #0F2C13 50%);
 }
 .navbar-default .navbar-brand {
   color: #777;
