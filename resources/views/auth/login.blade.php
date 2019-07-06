@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-6" style="background-color: white;">
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="padding: 30px 80px;">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="padding: 30px 90px;">
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -28,22 +28,34 @@
           </div>
 
           <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="border-radius: 100%; margin: 150px 80px;">
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="border-radius: 100%; margin: 150px 90px;">
             <span class="glyphicon glyphicon-chevron-left"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next" style="border-radius: 100%; margin: 150px 80px;">
+          <a class="right carousel-control" href="#myCarousel" data-slide="next" style="border-radius: 100%; margin: 150px 90px;">
             <span class="glyphicon glyphicon-chevron-right"></span>
             <span class="sr-only">Next</span>
           </a>
 
         </div>
         
-        <img src="{{ url('images/logo_hmi.png') }}" style="position: absolute; right: 0" alt="">
+        <img src="{{ url('images/logo_hmi.png') }}" style="width: 25%; position: absolute; left: 45vw; top: 5vh; z-index: 9999;" alt="">
+
+        <center><h4 style="padding: 30px 110px;">Mari bergabung di HMI, untuk membina diri agar menjadi lebih baik yang berlandaskan Iman, Ilmu, dan Amal.</h4></center>
     </div>
 
-    <div class="col-md-6" style="background-color: green;">
-        <div class="panel panel-default" style="margin: 30px 80px;">
+    <div class="col-md-6" style="background-color: green; min-height: 91vh;">
+        <center>
+            <h3 style="margin: 0 180px; margin-top: 20vh; color: orange">"Strength grows in the moments when you think you can't go on but you keep going anyway."</h3>
+            <br><br>
+            <button class="btn btn-default" style="padding: 15px 100px;">Daftar</button>
+            <br><br>
+            <b style="color: orange;">Kader Saintek?</b><a href="" style="color: white"> Masuk</a>
+            <br>
+        </center>
+        <b style="position: absolute; bottom: 0vh; right: 16vw; color: orange;">Berfikir Keras Lakukan dengan Cerdas</b>
+
+        <!-- <div class="panel panel-default" style="margin: 30px 80px;">
             <div class="panel-heading">Login</div>
 
             <div class="panel-body">
@@ -101,7 +113,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 @endsection

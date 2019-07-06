@@ -14,7 +14,7 @@
     <link href="{{ url('home/css/bootstrap.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div id="app" style="overflow-x: hidden;">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
