@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>SIKOMIS | HMI Kom.Saintek</title>
 
     <!-- Styles -->
     <link href="{{ url('home/css/bootstrap.css') }}" rel="stylesheet">
@@ -20,6 +20,8 @@
             font-family: 'Century725W01-Condensed', sans-serif;
         }
     </style>
+
+    @yield('style')
 </head>
 <body>
     <div id="app" style="overflow-x: hidden;">
@@ -37,8 +39,12 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}" style="color: #0F2C13">
+                    <a class="navbar-brand hidden-xs" href="{{ url('/') }}" style="color: #0F2C13">
                         HMI KOMISARIAT SAINS & TEKNOLOGI
+                    </a>
+
+                    <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="{{ url('/') }}" style="color: #0F2C13; font-size: 4vw;">
+                        HMI Kom.Saintek
                     </a>
                 </div>
 
@@ -52,8 +58,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}"><h4 style="color: white;">Login</h4></a></li>
-                            <li><a href="{{ route('register') }}"><h4 style="color: white;">Register</h4></a></li>
+                            <li><a href="{{ route('login') }}"><h4 style="color: #0F2C13; font-size: 4vw;">Login</h4></a></li>
+                            <li><a href="{{ route('register') }}"><h4 style="color: #0F2C13; font-size: 4vw;">Register</h4></a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
@@ -86,5 +92,7 @@
     <!-- Scripts -->
     <script src="{{ url('home/jquery/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ url('home/js/bootstrap.js') }}"></script>
+
+    @yield('script')
 </body>
 </html>
