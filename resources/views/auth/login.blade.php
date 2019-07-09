@@ -140,6 +140,10 @@
 </div>
 @endsection
 
+@section('navbar')
+    @include('partials.navbarLogin')
+@endsection
+
 @section('script')
 <script>
     function toRegister() {
