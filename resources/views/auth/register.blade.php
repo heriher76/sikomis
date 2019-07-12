@@ -3,7 +3,7 @@
 @section('content')
 <div class="row" style="margin: 1vw;">
     <div class="col-md-4">
-        <h2>FORM REGISTRASI KADER HMI KOMISARIAT SAINS & TEKNOLOGI CABANG KABUPATEN BANDUNG</h2>
+        <h3>FORM REGISTRASI KADER HMI KOMISARIAT SAINS & TEKNOLOGI CABANG KABUPATEN BANDUNG</h3>
         <form id="registKader">
             <div class="row">
                 <input type="text" name="name" placeholder="Nama Lengkap" class="col-md-6">

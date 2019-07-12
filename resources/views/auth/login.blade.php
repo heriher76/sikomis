@@ -53,89 +53,162 @@
     </div>
 
     <div class="col-md-6" style="background-color: #0F2C13; min-height: 82vh;">
-        <div class="hidden-xs " >
-            <center>
-                <h2 style="margin: 0 14vw; margin-top: 10vh; color: #D1BA91">"Strength grows in the moments when you think you can't go on but you keep going anyway."</h2>
-                <br><br>
-                <button onclick="toRegister();" class="btn btn-default" style="padding: 1vw 7vw; background-color: #D1BA91"><h4>Daftar</h4></button>
-                <br>
-                <h5 style="color: white;">Kader Saintek?</h5><a href="" style="color: grey"><h5> Masuk</h5></a>
-                <br>
-            </center>
-            <b style="position: absolute; bottom: 0vh; left: 12vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
+        <div id="frontPanel">
+            <div class="hidden-xs">
+                <center>
+                    <h2 style="margin: 0 14vw; margin-top: 10vh; color: #D1BA91">"Strength grows in the moments when you think you can't go on but you keep going anyway."</h2>
+                    <br><br>
+                    <button onclick="toRegister();" class="btn btn-default" style="padding: 1vw 7vw; background-color: #D1BA91"><h4>Daftar</h4></button>
+                    <br>
+                    <h5 style="color: white;">Kader Saintek?</h5><a href="#" onclick="showLogin();" style="color: grey"><h5> Masuk</h5></a>
+                    <br>
+                </center>
+                <b style="position: absolute; bottom: 0vh; left: 12vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
+            </div>
+
+            <div class="hidden-sm hidden-md hidden-lg">
+                <center style="padding-top: 7vh;">
+                    <h2 style="margin: 0 14vw; margin-top: 20vh; color: #D1BA91">"Strength grows in the moments when you think you can't go on but you keep going anyway."</h2>
+                    <br><br>
+                    <button onclick="toRegister();" class="btn btn-default" style="padding: 1vw 7vw; background-color: #D1BA91"><h4>Daftar</h4></button>
+                    <br>
+                    <h5 style="color: white;">Kader Saintek?</h5><a href="#" onclick="showLogin();" style="color: grey"><h5> Masuk</h5></a>
+                    <br>
+                </center>
+                <b style="position: absolute; bottom: 0vh; left: 11vw; color: #D1BA91; font-size: 6vw;">Berfikir Keras Lakukan dengan Cerdas</b>
+            </div>
         </div>
+        
+        <div class="loginPanel" style="display: none;">
+            <div class="panel panel-default hidden-xs" style="margin: 30px 80px;">
+                <div class="panel-heading">Login</div>
 
-        <div class="hidden-sm hidden-md hidden-lg">
-            <center style="padding-top: 7vh;">
-                <h2 style="margin: 0 14vw; margin-top: 20vh; color: #D1BA91">"Strength grows in the moments when you think you can't go on but you keep going anyway."</h2>
-                <br><br>
-                <button onclick="toRegister();" class="btn btn-default" style="padding: 1vw 7vw; background-color: #D1BA91"><h4>Daftar</h4></button>
-                <br>
-                <h5 style="color: white;">Kader Saintek?</h5><a href="" style="color: grey"><h5> Masuk</h5></a>
-                <br>
-            </center>
-            <b style="position: absolute; bottom: 0vh; left: 11vw; color: #D1BA91; font-size: 6vw;">Berfikir Keras Lakukan dengan Cerdas</b>
-        </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                        {{ csrf_field() }}
 
-        <!-- <div class="panel panel-default" style="margin: 30px 80px;">
-            <div class="panel-heading">Login</div>
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <h4 for="email" class="col-md-4 control-label">E-Mail</h4>
 
-            <div class="panel-body">
-                <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                    {{ csrf_field() }}
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
-                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                        <div class="col-md-6">
-                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                            @if ($errors->has('email'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-
-                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                        <label for="password" class="col-md-4 control-label">Password</label>
-
-                        <div class="col-md-6">
-                            <input id="password" type="password" class="form-control" name="password" required>
-
-                            @if ($errors->has('password'))
-                                <span class="help-block">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-6 col-md-offset-4">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                </label>
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <div class="col-md-8 col-md-offset-4">
-                            <button type="submit" class="btn btn-primary">
-                                Login
-                            </button>
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <h4 for="password" class="col-md-4 control-label">Password</h4>
 
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                Forgot Your Password?
-                            </a>
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
-                    </div>
-                </form>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="checkbox">
+                                    <h4>
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary" style="background-color: #0F2C13">
+                                    Login
+                                </button>
+
+                                <a class="btn btn-link" href="{{ route('password.request') }}" style="color: #0F2C13">
+                                    Forgot Your Password?
+                                </a>
+                            </div>
+                        </div>
+                        <h5 style="color: #0F2C13; cursor: pointer;" onclick="showFront();">Daftar Akun?</h5>
+                    </form>
+
+                    <b style="position: absolute; bottom: 0vh; left: 10vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
+                </div>
             </div>
-        </div> -->
+        </div>
+
+        <div class="loginPanel" style="display: none; padding-top: 20vh;">
+            <div class="panel panel-default hidden-sm hidden-md hidden-lg">
+                <div class="panel-heading" style="color: #0F2C13; background-color: white;">Login</div>
+
+                <div class="panel-body">
+                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                        {{ csrf_field() }}
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <h4 for="email" class="col-md-4 control-label">E-Mail</h4>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <h4 for="password" class="col-md-4 control-label">Password</h4>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="checkbox">
+                                    <h4>
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary" style="background-color: #0F2C13">
+                                    Login
+                                </button>
+
+                                <a class="btn btn-link" href="{{ route('password.request') }}" style="color: #0F2C13">
+                                    Forgot Your Password?
+                                </a>
+                            </div>
+                        </div>
+                        <h5 style="color: #0F2C13; cursor: pointer;" onclick="showFront();">Daftar Akun?</h5>
+                    </form>
+
+                    <b style="position: absolute; bottom: 0vh; left: 10vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 @endsection
@@ -148,6 +221,26 @@
 <script>
     function toRegister() {
         return window.location="{{ url('/register') }}";
+    }
+    function showLogin() {
+        var frontPanel = document.getElementById('frontPanel');
+            frontPanel.style.display = 'none';
+
+        let loginPanel = document.getElementsByClassName('loginPanel');
+            // loginPanel.style.display = 'block';
+        for (var i = 0; i < loginPanel.length; i++) {
+          loginPanel[i].style.display = "block";
+        }
+    }
+    function showFront() {
+        var frontPanel = document.getElementById('frontPanel');
+            frontPanel.style.display = 'block';
+
+        let loginPanel = document.getElementsByClassName('loginPanel');
+            // loginPanel.style.display = 'none';
+        for (var i = 0; i < loginPanel.length; i++) {
+          loginPanel[i].style.display = "none";
+        }
     }
 </script>
 @endsection
