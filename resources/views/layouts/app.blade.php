@@ -12,7 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ url('home/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="//db.onlinewebfonts.com/c/2761ff5c1c9695ef26215d530201ad1c?family=Century725W01-Condensed" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ url('images/logo_hmi.png') }}" />
+    <link href="https://db.onlinewebfonts.com/c/2761ff5c1c9695ef26215d530201ad1c?family=Century725W01-Condensed" rel="stylesheet">
 
     <style type="text/css">
         body{

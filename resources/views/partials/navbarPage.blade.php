@@ -4,11 +4,11 @@
             <img src="{{ url('images/logo_komisariat.png') }}" class="img-responsive" style="max-width: 8vh; float: left;" alt="">
 
             <!-- Collapsed Hamburger -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false" style="border-color: black;">
                 <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="icon-bar" style="background-color: black;"></span>
+                <span class="icon-bar" style="background-color: black;"></span>
+                <span class="icon-bar" style="background-color: black;"></span>
             </button>
 
             <!-- Branding Image -->

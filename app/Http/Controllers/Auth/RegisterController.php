@@ -50,7 +50,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            // 'password' => 'required|string|min:6|confirmed',
         ]);
     }
 
@@ -65,7 +65,32 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'status' => $data['status'],
+            'jk' => $data['jk'],
             'password' => bcrypt($data['password']),
+            'username' => $data['username'],
+            'phone' => $data['phone'],
+            'ttl' => $data['ttl'],
+            'jurusan' => $data['jurusan'],
+            'angkatan' => $data['angkatan'],
+            'sma' => $data['sma'],
+            'lulusSma' => $data['lulusSma'],
+            'smp' => $data['smp'],
+            'lulusSmp' => $data['lulusSmp'],
+            'sd' => $data['sd'],
+            'lulusSd' => $data['lulusSd'],
+            'organisasiSma' => $data['organisasiSma'],
+            'organisasiKuliah' => $data['organisasiKuliah'],
+            'organisasiLainnya' => $data['organisasiLainnya'],
+            'penyakit' => $data['penyakit'],
+            'hobby' => $data['hobby'],
+            'keahlian' => $data['keahlian'],
+            'bahasa' => $data['bahasa'],
+            'namaAyah' => $data['namaAyah'],
+            'namaIbu' => $data['namaIbu'],
+            'jumlahSaudara' => $data['jumlahSaudara'],
+            'anakKeberapa' => $data['anakKeberapa'],
+            'harapan' => $data['harapan'],
         ]);
     }
 }

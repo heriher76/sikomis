@@ -41,7 +41,7 @@
         
         <img class="hidden-xs hidden-sm" src="{{ url('images/logo_hmi.png') }}" style="width: 25%; position: absolute; left: 45vw; top: 1vh; z-index: 9999;" alt="">
 
-        <img class="hidden-sm hidden-md hidden-lg" src="{{ url('images/logo_hmi.png') }}" style="width: 25vw; position: absolute; left: 41vw; top: 60vh; z-index: 9999;" alt="">
+        <img class="hidden-sm hidden-md hidden-lg" src="{{ url('images/logo_hmi.png') }}" style="width: 25vw; position: absolute; left: 41vw; top: 102vw; z-index: 9999;" alt="">
 
         <center class="hidden-xs">
             <h3 style="padding: 0vw 7vw; padding-top: 2vw; color: #0F2C13">Mari bergabung di HMI, untuk membina diri agar menjadi lebih baik yang berlandaskan Iman, Ilmu, dan Amal.</h3>

@@ -1,64 +1,65 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="background-image: url({{ url('images/logo_hmi.png') }}); background-repeat: no-repeat; background-position: center; background-size: 40vh;">
 <div class="row">
     <div class="col-md-4">
         <h3>FORM REGISTRASI KADER HMI KOMISARIAT SAINS & TEKNOLOGI CABANG KABUPATEN BANDUNG</h3>
-        <form id="registKader">    
+        <form id="registKader" method="POST" action="{{ route('register') }}">
+            {{csrf_field()}}    
             <input type="text" name="name" placeholder="Nama Lengkap" class="col-md-6 col-xs-12 form-control" required>
             <input type="text" name="username" placeholder="Username" class="col-md-6 col-xs-12 form-control" required>
             <input type="text" name="phone" placeholder="Nomor Ponsel" class="col-md-6 form-control" style="width: 100%;" required>
             <input type="email" name="email" placeholder="Alamat Email" class="col-md-6 form-control" style="width: 100%;" required>
             <input type="text" name="ttl" placeholder="Tempat Tanggal Lahir" class="col-md-6 form-control" style="width: 100%;" required>
-            <select class="form-control col-md-8"required>
-                <option>Laki Laki</option>
-                <option>Perempuan</option>
+            <select class="form-control col-md-8" name="jk" required>
+                <option value="laki-laki">Laki Laki</option>
+                <option value="perempuan">Perempuan</option>
             </select>
-            <input type="password" name="password" placeholder="Password" class="col-md-6 form-control" style="width: 100%;">
-            <input type="password" name="confirmPassword" placeholder="Ulangi Password" class="col-md-6 form-control" style="width: 100%;">
+            <input type="password" name="password" placeholder="Password" class="col-md-6 form-control" style="width: 100%;" required>
+            <input type="password" name="confirmPassword" placeholder="Ulangi Password" class="col-md-6 form-control" style="width: 100%;" required>
         </form>
     </div>
     <div class="col-md-4">
-        <select class="form-control col-md-8">
-            <option>Belum Menikah</option>
-            <option>Menikah</option>
+        <select class="form-control col-md-8" name="status" form="registKader" required>
+            <option value="belum-menikah">Belum Menikah</option>
+            <option value="menikah">Menikah</option>
         </select>
-        <textarea placeholder="Alamat Asal" class="form-control col-md-8"></textarea>
-        <textarea placeholder="Alamat Sekarang" class="form-control col-md-8"></textarea>
+        <textarea placeholder="Alamat Asal" class="form-control col-md-8" form="registKader" required></textarea>
+        <textarea placeholder="Alamat Sekarang" class="form-control col-md-8" form="registKader" required></textarea>
         <div class="row" style="margin: 1px 2px;">
-            <input type="text" name="jurusan" placeholder="Jurusan" class="col-md-8 col-xs-8" style="background-color: #D1BA91;">
-            <input type="text" name="angkatan" placeholder="Angkatan" class="col-md-4 col-xs-4" style="background-color: #D1BA91;">
+            <input type="text" name="jurusan" placeholder="Jurusan" class="col-md-8 col-xs-8" form="registKader" style="background-color: #D1BA91;" required>
+            <input type="text" name="angkatan" placeholder="Angkatan" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;" required>
         </div>
         <div class="row" style="margin: 1px 2px;">
-            <input type="text" name="sma" placeholder="SMA" class="col-md-8 col-xs-8" style="background-color: #D1BA91;">
-            <input type="text" name="lulusSma" placeholder="Thn Lulus" class="col-md-4 col-xs-4" style="background-color: #D1BA91;">
+            <input type="text" name="sma" placeholder="SMA" class="col-md-8 col-xs-8" style="background-color: #D1BA91;" form="registKader" required>
+            <input type="text" name="lulusSma" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;" required>
         </div>
         <div class="row" style="margin: 1px 2px;">
-            <input type="text" name="smp" placeholder="SMP" class="col-md-8 col-xs-8" style="background-color: #D1BA91;">
-            <input type="text" name="lulusSmp" placeholder="Thn Lulus" class="col-md-4 col-xs-4" style="background-color: #D1BA91;">
+            <input type="text" name="smp" placeholder="SMP" class="col-md-8 col-xs-8" style="background-color: #D1BA91;" form="registKader" required>
+            <input type="text" name="lulusSmp" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;" required>
         </div>
         <div class="row" style="margin: 3px 2px;">
-            <input type="text" name="sd" placeholder="SD" class="col-md-8 col-xs-8" style="background-color: #D1BA91;">
-            <input type="text" name="lulusSd" placeholder="Thn Lulus" class="col-md-4 col-xs-4" style="background-color: #D1BA91;">
+            <input type="text" name="sd" placeholder="SD" class="col-md-8 col-xs-8" style="background-color: #D1BA91;" form="registKader" required>
+            <input type="text" name="lulusSd" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;" required>
         </div>
-        <input type="text" name="organisasiSma" placeholder="Organisasi Saat SMA" class="col-md-6 form-control" style="width: 100%;">
-        <input type="text" name="organisasiKuliah" placeholder="Organisasi Saat Kuliah" class="col-md-6 form-control" style="width: 100%;">
-        <input type="text" name="organisasiLainnya" placeholder="Organisasi Lainnya" class="col-md-6 form-control" style="width: 100%;">
-        <input type="text" name="penyakit" placeholder="Penyakit Yang Sering Dialami" class="col-md-6 form-control" style="width: 100%;">
+        <input type="text" name="organisasiSma" placeholder="Organisasi Saat SMA" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="organisasiKuliah" placeholder="Organisasi Saat Kuliah" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="organisasiLainnya" placeholder="Organisasi Lainnya" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="penyakit" placeholder="Penyakit Yang Sering Dialami" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
     </div>
     <div class="col-md-4">
-        <input type="text" name="hobby" placeholder="Hobby" class="col-md-6 form-control" style="width: 100%;">
-        <input type="text" name="keahlian" placeholder="Keahlian" class="col-md-6 form-control" style="width: 100%;">
-        <input type="text" name="bahasa" placeholder="Bahasa" class="col-md-6 form-control" style="width: 100%;">
-        <input type="text" name="namaAyah" placeholder="Nama Ayah" class="col-md-6 form-control" style="width: 100%;">
-        <input type="text" name="namaIbu" placeholder="Nama Ibu" class="col-md-6 form-control" style="width: 100%;">
-        <input type="text" name="jumlahSaudara" placeholder="Jumlah Saudara Kandung" class="col-md-6 form-control" style="width: 100%;">
-        <input type="text" name="anakKeberapa" placeholder="Anak Keberapa" class="col-md-6 form-control" style="width: 100%;">
-        <input type="text" name="harapan" placeholder="Pengembangan Yang Diharapkan di HmI" class="col-md-6 form-control" style="width: 100%;">
-        <textarea placeholder="Alasan Mengikuti HmI" class="form-control col-md-8"></textarea>
+        <input type="text" name="hobby" placeholder="Hobby" class="col-md-6 form-control" form="registKader" style="width: 100%;" required>
+        <input type="text" name="keahlian" placeholder="Keahlian" class="col-md-6 form-control" form="registKader" style="width: 100%;" required>
+        <input type="text" name="bahasa" placeholder="Bahasa" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="namaAyah" placeholder="Nama Ayah" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="namaIbu" placeholder="Nama Ibu" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="jumlahSaudara" placeholder="Jumlah Saudara Kandung" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="anakKeberapa" placeholder="Anak Keberapa" class="col-md-6 form-control" style="width: 100%;"  form="registKader"required>
+        <input type="text" name="harapan" placeholder="Pengembangan Yang Diharapkan di HmI" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <textarea placeholder="Alasan Mengikuti HmI" form="registKader" class="form-control col-md-8" required></textarea>
         <br>
-        <button class="btn btn-primary" style="float: right;" form="registKader">Daftar</button>
+        <button type="submit" class="btn btn-success" style="float: right; width: 150px;" form="registKader">Daftar</button>
     </div>
     <!-- <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">

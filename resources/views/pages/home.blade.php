@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Terima Kasih</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -14,10 +14,14 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Anda Sudah Berhasil Mendaftar, Silahkan Mengikuti Latihan Kader 1 Untuk Menjadi Anggota HmI. YAKUSA!
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('navbar')
+    @include('partials.navbarPage')
 @endsection
