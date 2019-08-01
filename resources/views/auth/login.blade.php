@@ -182,7 +182,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
+                                <div class="checkbox" style="left: 5vw;">
                                     <h4>
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                                     </h4>
@@ -204,7 +204,7 @@
                         <h5 style="color: #0F2C13; cursor: pointer;" onclick="showFront();">Daftar Akun?</h5>
                     </form>
 
-                    <b style="position: absolute; bottom: 0vh; left: 11vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
+                    <b style="position: absolute; bottom: 0vh; left: 5vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
                 </div>
             </div>
         </div>
