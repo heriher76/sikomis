@@ -139,7 +139,7 @@
                         <h5 style="color: #0F2C13; cursor: pointer;" onclick="showFront();">Daftar Akun?</h5>
                     </form>
 
-                    <b style="position: absolute; bottom: 0vh; left: 10vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
+                    <b style="position: absolute; bottom: 0vh; left: 11vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
                 </div>
             </div>
         </div>
