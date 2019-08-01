@@ -32,7 +32,7 @@
                 <!-- Authentication Links -->
                 @guest
                     <li><a href="{{ route('login') }}"><h4 style="color: #0F2C13; ">Login</h4></a></li>
-                    <li><a href="{{ route('register') }}"><h4 style="color: #0F2C13; ">Register</h4></a></li>
+                    <!-- <li><a href="{{ route('register') }}"><h4 style="color: #0F2C13; ">Register</h4></a></li> -->
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
