@@ -16,7 +16,10 @@
 
                     Anda Sudah Berhasil Mendaftar, Silahkan Mengikuti Latihan Kader 1 Untuk Menjadi Anggota HmI. Yakin Usaha Sampai!
                     <br>
-                    Kontak: 089615266856 ( Heri )
+                    <br>
+                    Konfirmasi Pendaftaran: 
+                    <br>
+                    089615266856 ( Heri )
                 </div>
             </div>
         </div>
