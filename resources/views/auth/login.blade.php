@@ -52,7 +52,7 @@
         </center>
     </div>
 
-    <div class="col-md-6" style="background-color: #0F2C13; min-height: 82vh;">
+    <div class="col-md-6" style="background-color: #0F2C13; min-height: 91vh;">
         <div id="frontPanel">
             <div class="hidden-xs">
                 <center>
@@ -139,7 +139,7 @@
                         <h5 style="color: #0F2C13; cursor: pointer;" onclick="showFront();">Daftar Akun?</h5>
                     </form>
 
-                    <b style="position: absolute; bottom: 0vh; left: 11vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
+                    <b style="position: absolute; bottom: 0vh; left: 12vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
                 </div>
             </div>
         </div>
@@ -204,7 +204,7 @@
                         <h5 style="color: #0F2C13; cursor: pointer;" onclick="showFront();">Daftar Akun?</h5>
                     </form>
 
-                    <b style="position: absolute; bottom: 0vh; left: 10vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
+                    <b style="position: absolute; bottom: 0vh; left: 11vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
                 </div>
             </div>
         </div>
