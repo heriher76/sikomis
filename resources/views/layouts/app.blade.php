@@ -13,9 +13,17 @@
     <!-- Styles -->
     <link href="{{ url('home/css/bootstrap.css') }}" rel="stylesheet">
     <link rel="icon" type="image/png" href="{{ url('images/logo_hmi.png') }}" />
-    <link href="https://db.onlinewebfonts.com/c/2761ff5c1c9695ef26215d530201ad1c?family=Century725W01-Condensed" rel="stylesheet">
 
     <style type="text/css">
+        @font-face {font-family: "Century725W01-Condensed";
+            src: url("https://db.onlinewebfonts.com/t/2761ff5c1c9695ef26215d530201ad1c.eot");
+            src: url("https://db.onlinewebfonts.com/t/2761ff5c1c9695ef26215d530201ad1c.eot?#iefix") format("embedded-opentype"),
+            url("https://db.onlinewebfonts.com/t/2761ff5c1c9695ef26215d530201ad1c.woff2") format("woff2"),
+            url("https://db.onlinewebfonts.com/t/2761ff5c1c9695ef26215d530201ad1c.woff") format("woff"),
+            url("https://db.onlinewebfonts.com/t/2761ff5c1c9695ef26215d530201ad1c.ttf") format("truetype"),
+            url("https://db.onlinewebfonts.com/t/2761ff5c1c9695ef26215d530201ad1c.svg#Century725W01-Condensed") format("svg");
+        }
+
         body{
             font-size: 25px;
             font-family: 'Century725W01-Condensed', sans-serif;
