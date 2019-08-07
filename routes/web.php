@@ -13,6 +13,10 @@
 
 Auth::routes();
 
-Route::group(["middleware" => "auth"], function(){
-	Route::get('/', 'PagesController@home');	
+Route::group(['middleware' => ['auth', 'role:admin']], function () {
+	Route::get('/admin', 'Admin\AdminController@index');
+});
+
+Route::group(['middleware' => ['auth', 'role:user']], function () {
+    Route::get('/', 'PagesController@home');
 });

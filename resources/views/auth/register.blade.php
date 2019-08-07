@@ -28,20 +28,20 @@
         <textarea placeholder="Alamat Asal" class="form-control col-md-8" form="registKader" required></textarea>
         <textarea placeholder="Alamat Sekarang" class="form-control col-md-8" form="registKader" required></textarea>
         <div class="row" style="margin: 1px 2px;">
-            <input type="text" name="jurusan" placeholder="Jurusan" class="col-md-8 col-xs-8" form="registKader" style="background-color: #D1BA91;" required>
-            <input type="text" name="angkatan" placeholder="Angkatan" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;" required>
+            <input type="text" name="jurusan" placeholder="Jurusan" class="col-md-8 col-xs-8" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" required>
+            <input type="text" name="angkatan" placeholder="Angkatan" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" required>
         </div>
         <div class="row" style="margin: 1px 2px;">
-            <input type="text" name="sma" placeholder="SMA" class="col-md-8 col-xs-8" style="background-color: #D1BA91;" form="registKader" required>
-            <input type="text" name="lulusSma" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;" required>
+            <input type="text" name="sma" placeholder="SMA" class="col-md-8 col-xs-8" style="background-color: #D1BA91;opacity: 0.9;" form="registKader" required>
+            <input type="text" name="lulusSma" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" required>
         </div>
         <div class="row" style="margin: 1px 2px;">
-            <input type="text" name="smp" placeholder="SMP" class="col-md-8 col-xs-8" style="background-color: #D1BA91;" form="registKader" required>
-            <input type="text" name="lulusSmp" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;" required>
+            <input type="text" name="smp" placeholder="SMP" class="col-md-8 col-xs-8" style="background-color: #D1BA91;opacity: 0.9;" form="registKader" required>
+            <input type="text" name="lulusSmp" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" required>
         </div>
         <div class="row" style="margin: 3px 2px;">
-            <input type="text" name="sd" placeholder="SD" class="col-md-8 col-xs-8" style="background-color: #D1BA91;" form="registKader" required>
-            <input type="text" name="lulusSd" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;" required>
+            <input type="text" name="sd" placeholder="SD" class="col-md-8 col-xs-8" style="background-color: #D1BA91;opacity: 0.9;" form="registKader" required>
+            <input type="text" name="lulusSd" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" required>
         </div>
         <input type="text" name="organisasiSma" placeholder="Organisasi Saat SMA" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
         <input type="text" name="organisasiKuliah" placeholder="Organisasi Saat Kuliah" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
@@ -146,6 +146,7 @@
         }
         .form-control {
             background-color: #D1BA91;
+            opacity: 0.9;
             color: #0F2C13;
         }
         ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

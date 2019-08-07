@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Terima Kasih</div>
+                <div class="panel-heading">Terima Kasih Pejuang</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -17,7 +17,7 @@
                     Anda Sudah Berhasil Mendaftar, Silahkan Mengikuti Latihan Kader 1 Untuk Menjadi Anggota HmI. Yakin Usaha Sampai!
                     <br>
                     <br>
-                    Konfirmasi Pendaftaran: 
+                    Konfirmasi Pendaftaran (Whatsapp): 
                     <br>
                     089615266856 ( Heri )
                 </div>

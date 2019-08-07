@@ -12,7 +12,7 @@
             </button>
 
             <!-- Branding Image -->
-            <a class="navbar-brand hidden-xs" href="{{ url('/') }}" style="color: #0F2C13; font-size: 2vw;">
+            <a class="navbar-brand hidden-xs" href="{{ url('/') }}" style="color: #0F2C13; font-size: 2vw; margin-left: 15px;">
                 HMI KOMISARIAT SAINS & TEKNOLOGI
             </a>
 

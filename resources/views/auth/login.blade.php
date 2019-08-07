@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-6" style="background-color: white;">
+    <div class="col-md-6" style="background-color: white; min-height: 91vh;">
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="padding: 2vw 7vw;">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="padding: 2vw 7vw; margin-top: 5vw;">
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -39,12 +39,12 @@
 
         </div>
         
-        <img class="hidden-xs hidden-sm" src="{{ url('images/logo_hmi.png') }}" style="width: 25%; position: absolute; left: 45vw; top: 1vh; z-index: 9999;" alt="">
+        <img class="hidden-xs hidden-sm" src="{{ url('images/logo_hmi.png') }}" style="width: 25%; position: absolute; left: 45vw; top: 5vw; z-index: 9999;" alt="">
 
         <img class="hidden-sm hidden-md hidden-lg" src="{{ url('images/logo_hmi.png') }}" style="width: 25vw; position: absolute; left: 41vw; top: 102vw; z-index: 9999;" alt="">
 
         <center class="hidden-xs">
-            <h3 style="padding: 0vw 7vw; padding-top: 2vw; color: #0F2C13">Mari bergabung di HMI, untuk membina diri agar menjadi lebih baik yang berlandaskan Iman, Ilmu, dan Amal.</h3>
+            <h3 style="padding: 7vw; bottom: 0vw; color: #0F2C13; position: absolute;">Mari bergabung di HMI, untuk membina diri agar menjadi lebih baik yang berlandaskan Iman, Ilmu, dan Amal.</h3>
         </center>
 
         <center class="hidden-sm hidden-md hidden-lg">
@@ -56,14 +56,14 @@
         <div id="frontPanel">
             <div class="hidden-xs">
                 <center>
-                    <h2 style="margin: 0 14vw; margin-top: 10vh; color: #D1BA91">"Strength grows in the moments when you think you can't go on but you keep going anyway."</h2>
+                    <h2 style="margin: 0 14vw; margin-top: 7vw; color: #D1BA91">"Strength grows in the moments when you think you can't go on but you keep going anyway."</h2>
                     <br><br>
                     <button onclick="toRegister();" class="btn btn-default" style="padding: 1vw 7vw; background-color: #D1BA91"><h4>Daftar</h4></button>
                     <br>
-                    <h5 style="color: white;">Kader Saintek?</h5><a href="#" onclick="showLogin();" style="color: grey"><h5> Masuk</h5></a>
+                    <h5 style="color: white;">Kader Saintek?</h5><u><a href="#" onclick="showLogin();" style="color: white;"><h5> Masuk</h5></a></u>
                     <br>
                 </center>
-                <b style="position: absolute; bottom: 0vh; left: 12vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
+                <p style="position: absolute; bottom: 7vw; left: 8vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</p>
             </div>
 
             <div class="hidden-sm hidden-md hidden-lg">
@@ -72,15 +72,15 @@
                     <br><br>
                     <button onclick="toRegister();" class="btn btn-default" style="padding: 1vw 7vw; background-color: #D1BA91"><h4>Daftar</h4></button>
                     <br>
-                    <h5 style="color: white;">Kader Saintek?</h5><a href="#" onclick="showLogin();" style="color: grey"><h5> Masuk</h5></a>
+                    <h5 style="color: white;">Kader Saintek?</h5><u><a href="#" onclick="showLogin();" style="color: white"><h5> Masuk</h5></a></u>
                     <br>
                 </center>
-                <b style="position: absolute; bottom: 0vh; left: 11vw; color: #D1BA91; font-size: 6vw;">Berfikir Keras Lakukan dengan Cerdas</b>
+                <p style="position: absolute; bottom: 0vh; left: 11vw; color: #D1BA91; font-size: 6vw;">Berfikir Keras Lakukan dengan Cerdas</p>
             </div>
         </div>
         
         <div class="loginPanel" style="display: none;">
-            <div class="panel panel-default hidden-xs" style="margin: 30px 80px;">
+            <div class="panel panel-default hidden-xs" style="margin: 30px 80px; margin-top: 7vw;">
                 <div class="panel-heading">Login</div>
 
                 <div class="panel-body">
@@ -139,13 +139,13 @@
                         <h5 style="color: #0F2C13; cursor: pointer;" onclick="showFront();">Daftar Akun?</h5>
                     </form>
 
-                    <b style="position: absolute; bottom: 0vh; left: 12vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
+                    <p style="position: absolute; bottom: 7vw; left: 8vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</p>
                 </div>
             </div>
         </div>
 
-        <div class="loginPanel" style="display: none; padding-top: 20vh;">
-            <div class="panel panel-default hidden-sm hidden-md hidden-lg">
+        <div class="loginPanel hidden-sm hidden-md hidden-lg" style="display: none; padding-top: 30vw; padding-bottom: 10vw;">
+            <div class="panel panel-default">
                 <div class="panel-heading" style="color: #0F2C13; background-color: white;">Login</div>
 
                 <div class="panel-body">
@@ -204,7 +204,7 @@
                         <h5 style="color: #0F2C13; cursor: pointer;" onclick="showFront();">Daftar Akun?</h5>
                     </form>
 
-                    <b style="position: absolute; bottom: 0vh; left: 5vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</b>
+                    <p style="position: absolute; bottom: 0vh; left: 8vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</p>
                 </div>
             </div>
         </div>
