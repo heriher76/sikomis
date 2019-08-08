@@ -1,1 +1,5 @@
-<h1>This is admin</h1>
+@extends('layouts.admin')
+
+@section('content')
+	<h1>Selamat Datang !</h1>
+@endsection
