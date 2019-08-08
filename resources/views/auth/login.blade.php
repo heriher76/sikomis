@@ -13,17 +13,17 @@
           </ol>
 
           <!-- Wrapper for slides -->
-          <div class="carousel-inner" style="border-radius: 10%;">
+          <div class="carousel-inner" style="border-radius: 10%; min-height: 40vh; max-height: 40vh;">
             <div class="item active">
-              <img src="http://thegorbalsla.com/wp-content/uploads/2018/08/Danau-Sentani-Papua-700x468.jpg" alt="Los Angeles">
+              <img src="{{ url('slider/a.jpeg') }}" alt="Slider Pertama" style="height: 40vh; width: auto;">
             </div>
 
             <div class="item">
-              <img src="http://thegorbalsla.com/wp-content/uploads/2018/08/Danau-Sentani-Papua-700x468.jpg" alt="Chicago">
+              <img src="{{ url('slider/b.jpg') }}" alt="Slider Kedua" style="">
             </div>
 
             <div class="item">
-              <img src="http://thegorbalsla.com/wp-content/uploads/2018/08/Danau-Sentani-Papua-700x468.jpg" alt="New York">
+              <img src="{{ url('slider/c.jpeg') }}" alt="Slider Ketiga">
             </div>
           </div>
 
