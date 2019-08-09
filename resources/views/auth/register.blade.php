@@ -7,11 +7,11 @@
         <h3>FORM REGISTRASI KADER HMI KOMISARIAT SAINS & TEKNOLOGI CABANG KABUPATEN BANDUNG</h3>
         <form id="registKader" method="POST" action="{{ route('register') }}">
             {{csrf_field()}}    
-            <input type="text" name="name" placeholder="Nama Lengkap" class="col-md-6 col-xs-12 form-control" required>
-            <input type="text" name="username" placeholder="Username" class="col-md-6 col-xs-12 form-control" required>
-            <input type="text" name="phone" placeholder="Nomor Ponsel" class="col-md-6 form-control" style="width: 100%;" required>
-            <input type="email" name="email" placeholder="Alamat Email" class="col-md-6 form-control" style="width: 100%;" required>
-            <input type="text" name="ttl" placeholder="Tempat Tanggal Lahir" class="col-md-6 form-control" style="width: 100%;" required>
+            <input type="text" name="name" placeholder="Nama Lengkap" class="col-md-6 col-xs-12 form-control" value="{{ old('name') }}" required>
+            <input type="text" name="username" placeholder="Username" class="col-md-6 col-xs-12 form-control" value="{{ old('username') }}" required>
+            <input type="text" name="phone" placeholder="Nomor Ponsel" class="col-md-6 form-control" value="{{ old('phone') }}" style="width: 100%;" required>
+            <input type="email" name="email" value="{{ old('email') }}" placeholder="Alamat Email" class="col-md-6 form-control" style="width: 100%;" required>
+            <input type="text" name="ttl" value="{{ old('ttl') }}" placeholder="Tempat Tanggal Lahir" class="col-md-6 form-control" style="width: 100%;" required>
             <select class="form-control col-md-8" name="jk" required>
                 <option value="laki-laki">Laki Laki</option>
                 <option value="perempuan">Perempuan</option>
@@ -25,39 +25,39 @@
             <option value="belum-menikah">Belum Menikah</option>
             <option value="menikah">Menikah</option>
         </select>
-        <textarea placeholder="Alamat Asal" class="form-control col-md-8" form="registKader" required></textarea>
-        <textarea placeholder="Alamat Sekarang" class="form-control col-md-8" form="registKader" required></textarea>
+        <textarea name="alamatAsal" placeholder="Alamat Asal" class="form-control col-md-8" form="registKader" required>{{ old('alamatAsal') }}</textarea>
+        <textarea name="alamatSekarang" placeholder="Alamat Sekarang" class="form-control col-md-8" form="registKader" required>{{ old('alamatSekarang') }}</textarea>
         <div class="row" style="margin: 1px 2px;">
-            <input type="text" name="jurusan" placeholder="Jurusan" class="col-md-8 col-xs-8" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" required>
-            <input type="text" name="angkatan" placeholder="Angkatan" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" required>
+            <input type="text" name="jurusan" placeholder="Jurusan" class="col-md-8 col-xs-8" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" value="{{ old('jurusan') }}" required>
+            <input type="text" name="angkatan" value="{{ old('angkatan') }}" placeholder="Angkatan" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" required>
         </div>
         <div class="row" style="margin: 1px 2px;">
-            <input type="text" name="sma" placeholder="SMA" class="col-md-8 col-xs-8" style="background-color: #D1BA91;opacity: 0.9;" form="registKader" required>
-            <input type="text" name="lulusSma" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" required>
+            <input type="text" name="sma" value="{{ old('sma') }}" placeholder="SMA" class="col-md-8 col-xs-8" style="background-color: #D1BA91;opacity: 0.9;" form="registKader" required>
+            <input type="text" name="lulusSma" value="{{ old('lulusSma') }}" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" required>
         </div>
         <div class="row" style="margin: 1px 2px;">
-            <input type="text" name="smp" placeholder="SMP" class="col-md-8 col-xs-8" style="background-color: #D1BA91;opacity: 0.9;" form="registKader" required>
-            <input type="text" name="lulusSmp" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" required>
+            <input type="text" name="smp" value="{{ old('smp') }}" placeholder="SMP" class="col-md-8 col-xs-8" style="background-color: #D1BA91;opacity: 0.9;" form="registKader" required>
+            <input type="text" name="lulusSmp" value="{{ old('lulusSmp') }}" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" required>
         </div>
         <div class="row" style="margin: 3px 2px;">
-            <input type="text" name="sd" placeholder="SD" class="col-md-8 col-xs-8" style="background-color: #D1BA91;opacity: 0.9;" form="registKader" required>
-            <input type="text" name="lulusSd" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" required>
+            <input type="text" name="sd" value="{{ old('sd') }}" placeholder="SD" class="col-md-8 col-xs-8" style="background-color: #D1BA91;opacity: 0.9;" form="registKader" required>
+            <input type="text" name="lulusSd" value="{{ old('lulusSd') }}" placeholder="Thn Lulus" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" required>
         </div>
-        <input type="text" name="organisasiSma" placeholder="Organisasi Saat SMA" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
-        <input type="text" name="organisasiKuliah" placeholder="Organisasi Saat Kuliah" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
-        <input type="text" name="organisasiLainnya" placeholder="Organisasi Lainnya" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
-        <input type="text" name="penyakit" placeholder="Penyakit Yang Sering Dialami" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="organisasiSma" value="{{ old('organisasiSma') }}" placeholder="Organisasi Saat SMA" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="organisasiKuliah" value="{{ old('organisasiKuliah') }}" placeholder="Organisasi Saat Kuliah" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="organisasiLainnya" value="{{ old('organisasiLainnya') }}" placeholder="Organisasi Lainnya" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="penyakit" value="{{ old('penyakit') }}" placeholder="Penyakit Yang Sering Dialami" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
     </div>
     <div class="col-md-4">
-        <input type="text" name="hobby" placeholder="Hobby" class="col-md-6 form-control" form="registKader" style="width: 100%;" required>
-        <input type="text" name="keahlian" placeholder="Keahlian" class="col-md-6 form-control" form="registKader" style="width: 100%;" required>
-        <input type="text" name="bahasa" placeholder="Bahasa" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
-        <input type="text" name="namaAyah" placeholder="Nama Ayah" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
-        <input type="text" name="namaIbu" placeholder="Nama Ibu" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
-        <input type="text" name="jumlahSaudara" placeholder="Jumlah Saudara Kandung" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
-        <input type="text" name="anakKeberapa" placeholder="Anak Keberapa" class="col-md-6 form-control" style="width: 100%;"  form="registKader"required>
-        <input type="text" name="harapan" placeholder="Pengembangan Yang Diharapkan di HmI" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
-        <textarea placeholder="Alasan Mengikuti HmI" form="registKader" class="form-control col-md-8" required></textarea>
+        <input type="text" name="hobby" value="{{ old('hobby') }}" placeholder="Hobby" class="col-md-6 form-control" form="registKader" style="width: 100%;" required>
+        <input type="text" name="keahlian" value="{{ old('keahlian') }}" placeholder="Keahlian" class="col-md-6 form-control" form="registKader" style="width: 100%;" required>
+        <input type="text" name="bahasa" value="{{ old('bahasa') }}" placeholder="Bahasa" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="namaAyah" value="{{ old('namaAyah') }}" placeholder="Nama Ayah" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="namaIbu" value="{{ old('namaIbu') }}" placeholder="Nama Ibu" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="jumlahSaudara" value="{{ old('jumlahSaudara') }}" placeholder="Jumlah Saudara Kandung" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <input type="text" name="anakKeberapa" value="{{ old('anakKeberapa') }}" placeholder="Anak Keberapa" class="col-md-6 form-control" style="width: 100%;"  form="registKader"required>
+        <input type="text" name="harapan" value="{{ old('harapan') }}" placeholder="Pengembangan Yang Diharapkan di HmI" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
+        <textarea name="alasan" placeholder="Alasan Mengikuti HmI" form="registKader" class="form-control col-md-8" required>{{ old('alasan') }}</textarea>
         <br>
         <button type="submit" class="btn btn-success" style="float: right; width: 150px;" form="registKader">Daftar</button>
     </div>

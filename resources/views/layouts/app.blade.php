@@ -33,6 +33,7 @@
     @yield('style')
 </head>
 <body>
+    @include('sweetalert::alert')
     <div id="app" style="overflow-x: hidden;">
         @yield('navbar')
 

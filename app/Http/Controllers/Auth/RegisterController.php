@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+Use Alert;
 
 class RegisterController extends Controller
 {
@@ -70,6 +71,8 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
             'username' => $data['username'],
             'phone' => $data['phone'],
+            'alamatAsal' => $data['alamatAsal'],
+            'alamatSekarang' => $data['alamatSekarang'],
             'ttl' => $data['ttl'],
             'jurusan' => $data['jurusan'],
             'angkatan' => $data['angkatan'],
@@ -91,8 +94,11 @@ class RegisterController extends Controller
             'jumlahSaudara' => $data['jumlahSaudara'],
             'anakKeberapa' => $data['anakKeberapa'],
             'harapan' => $data['harapan'],
+            'alasan' => $data['alasan']
         ]);
         $user->attachRole(2);
+
+        Alert::success('Berhasil', 'Terimakasih Sudah Mendaftar');
 
         return $user;
     }

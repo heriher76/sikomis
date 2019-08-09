@@ -14,6 +14,7 @@ use Illuminate\Contracts\Validation\ImplicitRule;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Illuminate\Contracts\Validation\Rule as RuleContract;
 use Illuminate\Contracts\Validation\Validator as ValidatorContract;
+use Alert;
 
 class Validator implements ValidatorContract
 {
@@ -303,6 +304,7 @@ class Validator implements ValidatorContract
     public function validate()
     {
         if ($this->fails()) {
+            Alert::error('Gagal', 'Gagal Melakukan Registrasi');
             throw new ValidationException($this);
         }
     }
