@@ -16,8 +16,9 @@
                 <option value="laki-laki" {{ (old('jk') == 'laki-laki') ? 'selected' : "" }}>Laki Laki</option>
                 <option value="perempuan" {{ (old('jk') == 'perempuan') ? 'selected' : "" }}>Perempuan</option>
             </select>
-            <input type="password" name="password" placeholder="Password" class="col-md-6 form-control" style="width: 100%;" required>
-            <input type="password" name="confirmPassword" placeholder="Ulangi Password" class="col-md-6 form-control" style="width: 100%;" required>
+            <input type="password" name="password" id="password" placeholder="Password" class="col-md-6 form-control" style="width: 100%;" required>
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Ulangi Password" class="col-md-6 form-control" style="width: 100%;" required>
+            <span id='message'></span>
         </form>
     </div>
     <div class="col-md-4">
@@ -172,4 +173,15 @@
           color: #0F2C13;
         }
     </style>
+@endsection
+
+@section('script')
+    <script type="text/javascript">
+        $('#password, #confirmPassword').on('keyup', function () {
+          if ($('#password').val() == $('#confirmPassword').val()) {
+            $('#message').html('Matching').css('color', 'green');
+          } else 
+            $('#message').html('Not Matching').css('color', 'red');
+        });
+    </script>
 @endsection
