@@ -3,7 +3,8 @@
 @section('content')
 <h1>Pendaftar LK 1</h1>
 <br>
-<table id="table_id" class="display table table-condensed table-striped table-hover table-bordered table-responsive">
+<div class="table-responsive">
+<table id="table_id" class="display table table-condensed table-striped table-hover table-bordered">
     <thead>
         <tr>
             <th>No</th>
@@ -81,6 +82,7 @@
         @endforeach
     </tbody>
 </table>
+</div>
 @endsection
 
 @section('style')
