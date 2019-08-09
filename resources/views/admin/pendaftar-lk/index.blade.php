@@ -15,6 +15,8 @@
             <th style="display: none;">Username</th>
             <th style="display: none;">Status</th>
             <th style="display: none;">TTL</th>
+            <th style="display: none;">Alamat Asal</th>
+            <th style="display: none;">Alamat Sekarang</th>
             <th style="display: none;">SMA</th>
             <th style="display: none;">SMP</th>
             <th style="display: none;">SD</th>
@@ -30,6 +32,7 @@
             <th style="display: none;">Jumlah Saudara</th>
             <th style="display: none;">Anak Keberapa</th>
             <th style="display: none;">Harapan</th>
+            <th style="display: none;">Alasan Masuk</th>
             <th>Verif</th>
         </tr>
     </thead>
@@ -45,6 +48,8 @@
                 <td style="display: none;">{{ $user->username }}</td>
                 <td style="display: none;">{{ $user->status }}</td>
                 <td style="display: none;">{{ $user->ttl }}</td>
+                <td style="display: none;">{{ $user->alamatAsal }}</td>
+                <td style="display: none;">{{ $user->alamatSekarang }}</td>
                 <td style="display: none;">{{ $user->sma }} | {{ $user->lulusSma }}</td>
                 <td style="display: none;">{{ $user->smp }} | {{ $user->lulusSmp }}</td>
                 <td style="display: none;">{{ $user->sd }} | {{ $user->lulusSd }}</td>
@@ -60,6 +65,7 @@
                 <td style="display: none;">{{ $user->jumlahSaudara }}</td>
                 <td style="display: none;">{{ $user->anakKeberapa }}</td>
                 <td style="display: none;">{{ $user->harapan }}</td>
+                <td style="display: none;">{{ $user->alasan }}</td>
                 <td>
                     @if(!$user->sudahLK)
                     <a href="{{ url('admin/verifikasi/lk/'.$user->id) }}" class="btn btn-primary btn-sm">LK</a>
