@@ -13,8 +13,8 @@
             <input type="email" name="email" value="{{ old('email') }}" placeholder="Alamat Email" class="col-md-6 form-control" style="width: 100%;" required>
             <input type="text" name="ttl" value="{{ old('ttl') }}" placeholder="Tempat Tanggal Lahir" class="col-md-6 form-control" style="width: 100%;" required>
             <select class="form-control col-md-8" name="jk" required>
-                <option value="laki-laki">Laki Laki</option>
-                <option value="perempuan">Perempuan</option>
+                <option value="laki-laki" {{ (old('jk') == 'laki-laki') ? 'selected' : "" }}>Laki Laki</option>
+                <option value="perempuan" {{ (old('jk') == 'perempuan') ? 'selected' : "" }}>Perempuan</option>
             </select>
             <input type="password" name="password" placeholder="Password" class="col-md-6 form-control" style="width: 100%;" required>
             <input type="password" name="confirmPassword" placeholder="Ulangi Password" class="col-md-6 form-control" style="width: 100%;" required>
@@ -22,8 +22,8 @@
     </div>
     <div class="col-md-4">
         <select class="form-control col-md-8" name="status" form="registKader" required>
-            <option value="belum-menikah">Belum Menikah</option>
-            <option value="menikah">Menikah</option>
+            <option value="belum-menikah" {{ (old('status') == 'belum-menikah') ? 'selected' : "" }}>Belum Menikah</option>
+            <option value="menikah" {{ (old('status') == 'menikah') ? 'selected' : "" }}>Menikah</option>
         </select>
         <textarea name="alamatAsal" placeholder="Alamat Asal" class="form-control col-md-8" form="registKader" required>{{ old('alamatAsal') }}</textarea>
         <textarea name="alamatSekarang" placeholder="Alamat Sekarang" class="form-control col-md-8" form="registKader" required>{{ old('alamatSekarang') }}</textarea>
