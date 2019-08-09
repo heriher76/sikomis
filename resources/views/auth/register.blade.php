@@ -59,7 +59,7 @@
         <input type="text" name="harapan" value="{{ old('harapan') }}" placeholder="Pengembangan Yang Diharapkan di HmI" class="col-md-6 form-control" style="width: 100%;" form="registKader" required>
         <textarea name="alasan" placeholder="Alasan Mengikuti HmI" form="registKader" class="form-control col-md-8" required>{{ old('alasan') }}</textarea>
         <br>
-        <button type="submit" class="btn btn-success" style="float: right; width: 150px;" form="registKader">Daftar</button>
+        <button type="submit" class="btn btn-success" style="float: right; width: 150px; margin-bottom: 10px;" form="registKader">Daftar</button>
     </div>
     <!-- <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">

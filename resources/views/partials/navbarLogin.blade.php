@@ -22,18 +22,14 @@
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
-            <!-- Left Side Of Navbar -->
-            <ul class="nav navbar-nav">
-                &nbsp;
-            </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @guest
                     <div class="hidden-sm hidden-md hidden-lg">
-                        <li><a href="{{ route('login') }}"><h4 style="color: #0F2C13; font-size: 4vw;">Login</h4></a></li>
-                        <li><a href="{{ route('register') }}"><h4 style="color: #0F2C13; font-size: 4vw;">Register</h4></a></li>
+                        <li style="margin-left: 7px;"><a href="{{ route('login') }}"><h4 style="color: #0F2C13; font-size: 4vw;">Login</h4></a></li>
+                        <li style="margin-left: 7px;"><a href="{{ route('register') }}"><h4 style="color: #0F2C13; font-size: 4vw;">Register</h4></a></li>
                     </div>
                 @else
                     <li class="dropdown">

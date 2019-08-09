@@ -39,9 +39,9 @@
 
         </div>
         
-        <img class="hidden-xs hidden-sm" src="{{ url('images/logo_hmi.png') }}" style="width: 25%; position: absolute; left: 45vw; top: 5vw; z-index: 9999;" alt="">
+        <img class="hidden-xs" src="{{ url('images/logo_hmi.png') }}" style="width: 25%; position: absolute; left: 45vw; top: 5vw; z-index: 9999;" alt="">
 
-        <img class="hidden-sm hidden-md hidden-lg" src="{{ url('images/logo_hmi.png') }}" style="width: 25vw; position: absolute; left: 41vw; top: 102vw; z-index: 9999;" alt="">
+        <img class="hidden-sm hidden-md hidden-lg" src="{{ url('images/logo_hmi.png') }}" style="width: 25vw; position: absolute; left: 41vw; top: 130vw; z-index: 9999;" alt="">
 
         <center class="hidden-xs">
             <h3 style="padding: 7vw; bottom: 0vw; color: #0F2C13; position: absolute;">Mari bergabung di HMI, untuk membina diri agar menjadi lebih baik yang berlandaskan Iman, Ilmu, dan Amal.</h3>
@@ -204,7 +204,7 @@
                         <h5 style="color: #0F2C13; cursor: pointer;" onclick="showFront();">Daftar Akun?</h5>
                     </form>
 
-                    <p style="position: absolute; bottom: 0vh; left: 8vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</p>
+                    <p style="position: absolute; bottom: 0vh; left: 11vw; color: #D1BA91; font-size: 6vw;">Berfikir Keras Lakukan dengan Cerdas</p>
                 </div>
             </div>
         </div>

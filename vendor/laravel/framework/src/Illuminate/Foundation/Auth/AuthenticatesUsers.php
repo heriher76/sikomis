@@ -5,6 +5,7 @@ namespace Illuminate\Foundation\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use Alert;
 
 trait AuthenticatesUsers
 {
@@ -127,6 +128,8 @@ trait AuthenticatesUsers
      */
     protected function sendFailedLoginResponse(Request $request)
     {
+        Alert::toast('Username atau Password salah !', 'error')->position('top-end');
+
         throw ValidationException::withMessages([
             $this->username() => [trans('auth.failed')],
         ]);
