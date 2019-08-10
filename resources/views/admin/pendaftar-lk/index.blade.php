@@ -15,7 +15,8 @@
             <th style="display: none;">Gender</th>
             <th style="display: none;">Username</th>
             <th style="display: none;">Status</th>
-            <th style="display: none;">TTL</th>
+            <th style="display: none;">Tempat</th>
+            <th style="display: none;">Tanggal Lahir</th>
             <th style="display: none;">Alamat Asal</th>
             <th style="display: none;">Alamat Sekarang</th>
             <th style="display: none;">SMA</th>
@@ -48,7 +49,8 @@
                 <td style="display: none;">{{ $user->jk }}</td>
                 <td style="display: none;">{{ $user->username }}</td>
                 <td style="display: none;">{{ $user->status }}</td>
-                <td style="display: none;">{{ $user->ttl }}</td>
+                <td style="display: none;">{{ $user->tempat }}</td>
+                <td style="display: none;">{{ $user->tanggalLahir }}</td>
                 <td style="display: none;">{{ $user->alamatAsal }}</td>
                 <td style="display: none;">{{ $user->alamatSekarang }}</td>
                 <td style="display: none;">{{ $user->sma }} | {{ $user->lulusSma }}</td>
@@ -108,7 +110,7 @@
                     extend: 'excel',
                     title: 'Pendaftar LK 1',
                     exportOptions: {
-                        columns: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
+                        columns: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27]
                     }
                 },
                 {
@@ -117,7 +119,7 @@
                     pageSize: 'A1',
                     title: 'Pendaftar LK 1',
                     exportOptions: {
-                        columns: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]
+                        columns: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27]
                     }
                 }]
             } );
