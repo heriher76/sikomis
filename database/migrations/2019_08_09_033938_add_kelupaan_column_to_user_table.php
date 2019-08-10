@@ -15,7 +15,7 @@ class AddKelupaanColumnToUserTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
           $table->longText('alamatAsal')->after('phone')->nullable();
-          $table->longText('alamatSekarang')->after('ttl')->nullable();
+          $table->longText('alamatSekarang')->after('tanggalLahir')->nullable();
           $table->longText('alasan')->after('harapan')->nullable();
         });
     }

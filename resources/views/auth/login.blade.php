@@ -19,23 +19,36 @@
             </div>
 
             <div class="item">
-              <img src="{{ url('slider/b.jpg') }}" alt="Slider Kedua" style="">
+              <img src="{{ url('slider/b.jpg') }}" alt="Slider Kedua" style="height: 40vh; width: auto;">
             </div>
 
             <div class="item">
-              <img src="{{ url('slider/c.jpeg') }}" alt="Slider Ketiga">
+              <img src="{{ url('slider/c.jpeg') }}" alt="Slider Ketiga" style="height: 40vh; width: auto;">
             </div>
           </div>
 
           <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="border-radius: 100%; margin: 11vw 7vw;">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next" style="border-radius: 100%; margin: 11vw 7vw;">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-          </a>
+          <div class="hidden-sm hidden-md hidden-lg">
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="border-radius: 100%; margin: 30vw 7vw;">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next" style="border-radius: 100%; margin: 30vw 7vw;">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+          </div>
+
+          <div class="hidden-xs">
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="border-radius: 100%; margin: 11vw 7vw;">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next" style="border-radius: 100%; margin: 11vw 7vw;">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+          </div>
 
         </div>
         

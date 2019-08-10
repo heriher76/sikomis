@@ -11,7 +11,10 @@
             <input type="text" name="username" placeholder="Username" class="col-md-6 col-xs-12 form-control" value="{{ old('username') }}" required>
             <input type="text" name="phone" placeholder="Nomor Ponsel" class="col-md-6 form-control" value="{{ old('phone') }}" style="width: 100%;" required>
             <input type="email" name="email" value="{{ old('email') }}" placeholder="Alamat Email" class="col-md-6 form-control" style="width: 100%;" required>
-            <input type="text" name="ttl" value="{{ old('ttl') }}" placeholder="Tempat Tanggal Lahir" class="col-md-6 form-control" style="width: 100%;" required>
+            <div class="row" style="margin: 1px 2px;">
+                <input type="text" name="tempat" placeholder="Tempat" class="col-md-4 col-xs-4" form="registKader" style="background-color: #D1BA91;opacity: 0.9;" value="{{ old('tempat') }}" required>
+                <input placeholder="Tanggal Lahir" name="tanggalLahir" value="{{ old('tanggalLahir') }}" form="registKader" class="textbox-n col-md-8 col-xs-8" type="text" onfocus="(this.type='date')" style="background-color: #D1BA91;opacity: 0.9;" id="date" required>
+            </div>
             <select class="form-control col-md-8" name="jk" required>
                 <option value="laki-laki" {{ (old('jk') == 'laki-laki') ? 'selected' : "" }}>Laki Laki</option>
                 <option value="perempuan" {{ (old('jk') == 'perempuan') ? 'selected' : "" }}>Perempuan</option>

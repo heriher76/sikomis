@@ -18,7 +18,8 @@ class UpdateUsersTable extends Migration
           $table->string('status')->nullable();
           $table->string('jk')->nullable();
           $table->string('phone')->nullable();
-          $table->string('ttl')->nullable();
+          $table->string('tempat')->nullable();
+          $table->date('tanggalLahir')->nullable();
           $table->string('jurusan')->nullable();
           $table->string('angkatan')->nullable();
           $table->string('sma')->nullable();
@@ -54,7 +55,8 @@ class UpdateUsersTable extends Migration
           $table->dropColumn('status');
           $table->dropColumn('jk');
           $table->dropColumn('phone');
-          $table->dropColumn('ttl');
+          $table->dropColumn('tempat');
+          $table->dropColumn('tanggalLahir');
           $table->dropColumn('jurusan');
           $table->dropColumn('angkatan');
           $table->dropColumn('sma');
