@@ -79,6 +79,11 @@
                     @if(!$user->sudahPelantikan)
                     <a href="{{ url('admin/verifikasi/pelantikan/'.$user->id) }}" class="btn btn-success btn-sm">Pelantikan</a>
                     @endif
+                    <form action="{{ url('/admin/pendaftar-lk/'.$user->id) }}" method="POST">
+                      {{ csrf_field() }}
+                      {{ method_field('delete') }}
+                      <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Yakin Akan Dihapus?');">Hapus</button>
+                    </form>
                 </td>
             </tr>
         @endforeach

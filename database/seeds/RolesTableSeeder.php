@@ -22,12 +22,17 @@ class RolesTableSeeder extends Seeder
             ],
             [
                 'name' => 'user',
-                'display_name' => 'Registed User',
-                'description' => 'Access for registed user',
+                'display_name' => 'Registered User',
+                'description' => 'Access for registered user',
+            ],
+            [
+                'name' => 'kahmi',
+                'display_name' => 'KAHMI account',
+                'description' => 'Access for registered KAHMI',
             ],
         ];
 
-		foreach ($roles as $key => $value) {
+		    foreach ($roles as $key => $value) {
             Role::create($value);
         }
 //add user
@@ -42,11 +47,20 @@ class RolesTableSeeder extends Seeder
                 'email' => 'user@hmi-saintek.com',
                 'password' => bcrypt('12345678'),
             ],
+            [
+                'name' => 'kahmi',
+                'email' => 'kahmi@hmi-saintek.com',
+                'password' => bcrypt('12345678'),
+            ],
         ];
 
         $n=1;
 
         foreach ($users as $key => $value) {
+            if($n==3){
+              $user=Kahmi::create($value);
+              $user->attachRole($n);
+            }
             $user=User::create($value);
             $user->attachRole($n);
             $n++;
