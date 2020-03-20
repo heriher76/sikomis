@@ -13,7 +13,8 @@
 
 Auth::routes();
 
-Route::get('/register-kahmi', 'Admin\KahmiController@register');
+Route::get('kahmi-register','Auth\KahmiLoginController@showRegisterPage');
+Route::post('kahmi-register', 'Auth\KahmiLoginController@register')->name('kahmi.register');
 
 Route::group(['middleware' => ['auth', 'role:admin']], function () {
 	Route::get('/admin', 'Admin\AdminController@index');
@@ -28,6 +29,6 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 	Route::get('/admin/verifikasi/pelantikan/{id}', 'Admin\VerifikasiController@verifPelantikan');
 });
 
-Route::group(['middleware' => ['auth', 'role:user']], function () {
+Route::group(['middleware' => ['auth']], function () {
     Route::get('/', 'PagesController@home');
 });

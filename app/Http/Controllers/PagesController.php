@@ -8,6 +8,11 @@ class PagesController extends Controller
 {
     public function home()
     {
-        return view('pages.home');
+    	$me = \Auth::user();
+
+    	if($me->sudahPelantikan == 1)
+        	return view('pages.home');
+        else
+        	return view('pages.mustLK');
     }
 }
