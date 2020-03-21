@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('content')
+@section('contents')
 <div class="col-md-8 col-sm-12 col-xs-12">
     <div class="owl-carousel owl-theme slide" id="featured">
         <div class="item active">
@@ -587,4 +587,4 @@
 </section>
 @endsection
 
-@section('title', 'Home | SIKOMIS')
+@section('title', 'Beranda | SIKOMIS')

@@ -27,8 +27,11 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 	Route::get('/admin/verifikasi/lk/{id}', 'Admin\VerifikasiController@verifLK');
 	Route::get('/admin/verifikasi/upgrading/{id}', 'Admin\VerifikasiController@verifUpgrading');
 	Route::get('/admin/verifikasi/pelantikan/{id}', 'Admin\VerifikasiController@verifPelantikan');
+
+	Route::resource('/admin/news', 'Admin\NewsController');
 });
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/', 'PagesController@home');
+	Route::get('/news', 'PagesController@news');
 });

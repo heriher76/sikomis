@@ -120,18 +120,17 @@
 				<div class="row">
 					<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="block">
-							<h1 class="block-title">Hubungi Kami</h1>
+							<h1 class="block-title">Tentang</h1>
 							<div class="block-body">
 								<figure class="foot-logo">
-									<img src="{{ url('front/images/logo-light.png') }}" class="img-responsive" alt="Logo">
+									<img src="{{ url('images/logo_hmi.png') }}" class="img-responsive" alt="Logo HMI">
 								</figure>
 								<p class="brand-description">
-									<b>Abdul Rokib</b><br>
-									WhatsApp : +62 831 4955 2462 <br>
-									Email : redaksi.origin@gmail.com
+									<b>HMI Komisariat Sains dan Teknologi</b><br>
+									Jl. Permai V, Cipadung, Kec. Cibiru, Kota Bandung, Jawa Barat 40614 <br>
 								</p>
 								<br>
-								<a href="page.html" class="btn btn-magz white">Tentang Kami <i class="ion-ios-arrow-thin-right"></i></a>
+								<a href="page.html" class="btn btn-magz white">Profil Kabinet <i class="ion-ios-arrow-thin-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -140,13 +139,12 @@
 							<h1 class="block-title">Menu </h1>
 							<div class="block-body">
 								<ul>
-									<li><a href="#">Profil Kedai Kopi</a></li>
-									<li><a href="#">Profil Komunitas</a></li>
-									<li><a href="#">Berita Seputar Kopi</a></li>
-									<li><a href="#">Profil Sosok</a></li>
-									<li><a href="#">Event</a></li>
-									<li><a href="#">Promosi Produk</a></li>
-									<li><a href="#">Kolom Opini</a></li>
+									<li><a href="#">Kabinet</a></li>
+									<li><a href="#">Berita & Agenda</a></li>
+									<li><a href="#">Artikel</a></li>
+									<li><a href="#">Aktifitas</a></li>
+									<li><a href="#">KomiShop</a></li>
+									<li><a href="#">Karir</a></li>
 								</ul>
 							</div>
 						</div>
@@ -154,7 +152,7 @@
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="block">
-							<h1 class="block-title">Berita Terbaru</h1>
+							<h1 class="block-title">Berita & Agenda Terbaru</h1>
 							<div class="block-body">
 								<article class="article-mini">
 									<div class="inner">
@@ -244,36 +242,6 @@
 											<i class="ion-social-instagram-outline"></i>
 										</a>
 									</li>
-									<li>
-										<a href="#" class="tumblr">
-											<svg><rect width="0" height="0"/></svg>
-											<i class="ion-social-tumblr"></i>
-										</a>
-									</li>
-									<li>
-										<a href="#" class="dribbble">
-											<svg><rect width="0" height="0"/></svg>
-											<i class="ion-social-dribbble"></i>
-										</a>
-									</li>
-									<li>
-										<a href="#" class="linkedin">
-											<svg><rect width="0" height="0"/></svg>
-											<i class="ion-social-linkedin"></i>
-										</a>
-									</li>
-									<li>
-										<a href="#" class="skype">
-											<svg><rect width="0" height="0"/></svg>
-											<i class="ion-social-skype"></i>
-										</a>
-									</li>
-									<li>
-										<a href="#" class="rss">
-											<svg><rect width="0" height="0"/></svg>
-											<i class="ion-social-rss"></i>
-										</a>
-									</li>
 								</ul>
 							</div>
 						</div>
@@ -284,7 +252,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="copyright">
-							COPYRIGHT &copy; ORIGIN MAGAZINE INDONESIA 2019
+							COPYRIGHT &copy; HMI KOMISARIAT SAINS & TEKNOLOGI CAKABA 2020
 							<div>
 								Made with <i class="ion-heart"></i> by <a href="http://heriher76.github.io">HeriHerPlay</a>
 							</div>

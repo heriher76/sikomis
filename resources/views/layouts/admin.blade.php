@@ -132,6 +132,8 @@
   <script src="{{url('sb-admin/js/demo/datatables-demo.js')}}"></script>
   <script src="{{url('sb-admin/js/demo/chart-area-demo.js')}}"></script>
 
+  @yield('datatable')
+
   @yield('script')
   
 </body>

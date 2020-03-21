@@ -13,19 +13,13 @@
 		</div>
 		<div id="menu-list">
 			<ul class="nav-list">
-				<li><a href="{{ url('/') }}">Home</a></li>
-				<li class="dropdown magz-dropdown">
-					<a href="#">Profil <i class="ion-ios-arrow-right"></i></a>
-					<ul class="dropdown-menu">
-						<li><a href="{{ url('profile/coffee-shop') }}">Kedai Kopi</a></li>
-						<li><a href="{{ url('profile/community') }}">Komunitas</a></li>
-						<li><a href="{{ url('profile/figure') }}">Sosok</a></li>
-					</ul>
-				</li>
-				<li><a href="{{ url('news') }}">Berita</a></li>
-				<li><a href="{{ url('events') }}">Event</a></li>
-				<li><a href="{{ url('promotions') }}">Promosi</a></li>
-				<li><a href="{{ url('opinions') }}">Kolom Opini</a></li>
+				<li><a href="{{ url('/') }}">Beranda</a></li>
+				<li><a href="{{ url('news') }}">Kabinet</a></li>
+				<li><a href="{{ url('events') }}">Berita & Agenda</a></li>
+				<li><a href="{{ url('promotions') }}">Artikel</a></li>
+				<li><a href="{{ url('opinions') }}">Aktifitas</a></li>
+				<li><a href="javascript:void(0);" onclick="return alert('Coming Soon');">KomiShop</a></li>
+				<li><a href="javascript:void(0);" onclick="return alert('Coming Soon');">Karir</a></li>
 				<li class="dropdown magz-dropdown" ><a href="#">{{ \Auth::user()->name }} <i class="ion-ios-arrow-right"></i></a>
 					<ul class="dropdown-menu">
 						<li><a href="#"><i class="icon ion-person"></i> Profile</a></li>
