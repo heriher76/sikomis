@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\News;
+use App\Schedule;
 use Auth;
 
-class NewsController extends Controller
+class ScheduleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $newsNews = News::all();
+        $schedules = Schedule::all();
 
-        return view('admin.news.index', compact('newsNews'));
+        return view('admin.schedule.index', compact('schedules'));
     }
 
     /**
@@ -28,7 +28,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('admin.news.create');
+        return view('admin.schedule.create');
     }
 
     /**
@@ -44,21 +44,20 @@ class NewsController extends Controller
         ($input['slug']) ? $slug = $input['slug'] : $slug = str_slug($input['title'], '-');
         (isset($input['thumbnail'])) ? $namaThumbnail = str_random().'.'.$input['thumbnail']->getClientOriginalExtension() : $namaThumbnail = null;
 
-        News::create([
+        Schedule::create([
             'title' => $input['title'],
             'description' => $input['description'],
+            'date' => $input['date'],
             'slug' => $slug,
-            'thumbnail' => $namaThumbnail,
-            'publish_status' => $input['publish_status'],
-            'user_id' => Auth::user()->id
+            'thumbnail' => $namaThumbnail
         ]);
         
-        (isset($input['thumbnail'])) ? $input['thumbnail']->move(public_path('news-thumbnail'), $namaThumbnail) : null ;
+        (isset($input['thumbnail'])) ? $input['thumbnail']->move(public_path('schedule-thumbnail'), $namaThumbnail) : null ;
 
-        alert()->success('Berita Berhasil Dibuat !', '...');
+        alert()->success('Agenda Berhasil Dibuat !', '...');
 
         return redirect()->action(
-            'Admin\NewsController@index'
+            'Admin\ScheduleController@index'
         );
     }
 
@@ -70,9 +69,9 @@ class NewsController extends Controller
      */
     public function edit($slug)
     {
-        $berita = News::where('slug', $slug)->first();
+        $schedule = Schedule::where('slug', $slug)->first();
 
-        return view('admin.news.edit', compact('berita'));
+        return view('admin.schedule.edit', compact('schedule'));
     }
 
     /**
@@ -86,37 +85,37 @@ class NewsController extends Controller
     {
         $input = $request->all();
 
-        $News = News::where('slug', $slug)->first();
+        $schedule = Schedule::where('slug', $slug)->first();
 
         ($input['slug']) ? $slug = $input['slug'] : $slug = str_slug($input['title'], '-');
         if (isset($input['thumbnail'])) {
             $namaThumbnail = str_random().'.'.$input['thumbnail']->getClientOriginalExtension();
             
-            if (isset($News->thumbnail)) {
-                unlink(public_path('news-thumbnail/'.$News->thumbnail));
+            if (isset($schedule->thumbnail)) {
+                unlink(public_path('schedule-thumbnail/'.$schedule->thumbnail));
             }
-            $input['thumbnail']->move(public_path("news-thumbnail/"), $namaThumbnail);  
+            $input['thumbnail']->move(public_path("schedule-thumbnail/"), $namaThumbnail);  
 
-            $News->update([
+            $schedule->update([
                 'title' => $input['title'],
                 'description' => $input['description'],
                 'thumbnail' => $namaThumbnail,
-                'publish_status' => $input['publish_status'],
+                'date' => $input['date'],
                 'slug' => $input['slug']
             ]);
         }else{
-            $News->update([
+            $schedule->update([
                 'title' => $input['title'],
                 'description' => $input['description'],
-                'publish_status' => $input['publish_status'],
+                'date' => $input['date'],
                 'slug' => $input['slug']
             ]);
         }
 
-        alert()->success('Berita Berhasil DiPerbarui !', '...');
+        alert()->success('Agenda Berhasil DiPerbarui !', '...');
         
         return redirect()->action(
-            'Admin\NewsController@index'
+            'Admin\ScheduleController@index'
         );
     }
 
@@ -128,18 +127,18 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        $News = News::where('id', $id)->first();
+        $schedule = Schedule::where('id', $id)->first();
 
-        if (isset($News->thumbnail)) {
-            unlink(public_path('news-thumbnail/'.$News->thumbnail));
+        if (isset($schedule->thumbnail)) {
+            unlink(public_path('schedule-thumbnail/'.$schedule->thumbnail));
         }
         
-        $News->destroy($id);
+        $schedule->destroy($id);
 
-        alert()->success('News Berhasil Dihapus !', '...');
+        alert()->success('Agenda Berhasil Dihapus !', '...');
 
         return redirect()->action(
-            'Admin\NewsController@index'
+            'Admin\ScheduleController@index'
         );
     }
 }

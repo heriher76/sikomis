@@ -20,6 +20,8 @@ class PendaftarLKController extends Controller
     {
       User::destroy($id);
 
+      alert()->success('User Berhasil Dihapus !', '...');
+      
       return back();
     }
 }

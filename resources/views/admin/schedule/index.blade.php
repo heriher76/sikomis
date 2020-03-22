@@ -6,9 +6,9 @@
             <div class="card">
                 <div class="header">
                     <h1>
-                        Berita
+                        Agenda
                     </h1>
-                    <a href="{{ url('admin/news/create') }}" class="btn btn-primary waves-effect">Create</a>
+                    <a href="{{ url('admin/schedules/create') }}" class="btn btn-primary waves-effect">Create</a>
                 </div>
                 <br>
                 <div class="body">
@@ -16,26 +16,24 @@
                         <table id="table_id" class="display table table-condensed table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Judul</th>
-                                    <th>Publish Status</th>
-                                    <th>By</th>
+                                    <th>Nama</th>
+                                    <th>Tanggal</th>
                                     <th>Created At</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($newsNews as $berita)
+                                @foreach($schedules as $agenda)
                                 <tr>
-                                    <td>{{ $berita->title }}</td>
-                                    <td>@php echo ($berita->publish_status == 1) ? 'Published' : 'Drafted'; @endphp</td>
-                                    <td>{{ $berita->user->name }}</td>
-                                    <td>{{ $berita->created_at }}</td>
+                                    <td>{{ $agenda->title }}</td>
+                                    <td>{{ $agenda->date }}</td>
+                                    <td>{{ $agenda->created_at }}</td>
                                     <td>
-                                        <a href="{{ url('admin/news/'.$berita->slug.'/edit') }}" class="btn btn-success btn-xs waves-effect">Edit</a>
-                                        <form action="{{ url('admin/news/'.$berita->id) }}" method="POST" style="display: inline;">
+                                        <a href="{{ url('admin/schedules/'.$agenda->slug.'/edit') }}" class="btn btn-success btn-xs waves-effect">Edit</a>
+                                        <form action="{{ url('admin/schedules/'.$agenda->id) }}" method="POST" style="display: inline;">
                                             {{ csrf_field() }}
                                             {{ method_field('delete') }}
-                                            <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda Ingin Menghapus Berita Ini ?');">Delete</button>
+                                            <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda Ingin Menghapus Agenda Ini ?');">Delete</button>
                                         </form>
                                     </td>
                                 </tr>

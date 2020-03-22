@@ -18,8 +18,12 @@ Route::post('kahmi-register', 'Auth\KahmiLoginController@register')->name('kahmi
 
 Route::group(['middleware' => ['auth', 'role:admin']], function () {
 	Route::get('/admin', 'Admin\AdminController@index');
+
 	Route::get('/admin/kader', 'Admin\KaderController@index');
+	Route::delete('/admin/kader/{id}', 'Admin\KaderController@destroy');
+
 	Route::get('/admin/kahmi', 'Admin\KahmiController@index');
+	Route::delete('/admin/kahmi/{id}', 'Admin\KahmiController@destroy');
 
 	Route::get('/admin/pendaftar-lk', 'Admin\PendaftarLKController@index');
 	Route::delete('/admin/pendaftar-lk/{id}', 'Admin\PendaftarLKController@destroy');
@@ -29,6 +33,7 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 	Route::get('/admin/verifikasi/pelantikan/{id}', 'Admin\VerifikasiController@verifPelantikan');
 
 	Route::resource('/admin/news', 'Admin\NewsController');
+	Route::resource('/admin/schedules', 'Admin\ScheduleController');
 });
 
 Route::group(['middleware' => ['auth']], function () {

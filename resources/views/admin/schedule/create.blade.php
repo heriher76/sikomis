@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="header">
                     <h1>
-                        Tambah Berita
+                        Tambah Agenda
                     </h1>
                 </div>
                 <div class="body">
@@ -18,8 +18,15 @@
                         {{ csrf_field() }} -->
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <label class="form-label">Judul</label>
+                                <label class="form-label">Nama</label>
                                 <input type="text" name="title" class="form-control" form="willSubmit">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Tanggal</label>
+                                <input type="date" name="date" class="form-control" form="willSubmit">
                             </div>
                         </div>
 
@@ -40,14 +47,8 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <div class="card">
                             <div class="header">
-                          		<p>Publish Status = </p>
-                          		<form action="{{ url('admin/news') }}" id="willSubmit" method="POST" enctype="multipart/form-data">
-                          			{{ csrf_field() }}
-            	          			<input type="radio" id="published" class="with-gap" name="publish_status" value="1" checked>
-            	          			<label for="published">Publish</label>
-            	          			<input type="radio" id="drafted" class="with-gap" name="publish_status" value="0">
-            	          			<label for="drafted">Draft</label>
-            	                    <br><br>
+                              <form action="{{ url('admin/schedules') }}" id="willSubmit" method="POST" enctype="multipart/form-data">
+                                {{ csrf_field() }}
             	              		<div class="form-group form-float">	
             	              			<div class="form-line">
                                     <label class="form-label">Slug <em>*optional</em></label>

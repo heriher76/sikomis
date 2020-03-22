@@ -43,30 +43,37 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link " href="{{ url('/admin/pendaftar-lk') }}">
+    <a class="nav-link " href="{{ url('/admin/articles') }}">
        <i class="fas fa-fw fa-user"></i>
       <span>Artikel</span>
     </a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link " href="{{ url('/admin/pendaftar-lk') }}">
+    <a class="nav-link " href="{{ url('/admin/organizations') }}">
        <i class="fas fa-fw fa-user"></i>
       <span>Kabinet</span>
     </a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link " href="{{ url('/admin/pendaftar-lk') }}">
+    <a class="nav-link " href="{{ url('/admin/donations') }}">
        <i class="fas fa-fw fa-user"></i>
       <span>Setting Donasi</span>
     </a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link " href="{{ url('/admin/pendaftar-lk') }}">
+    <a class="nav-link " href="{{ url('/admin/activities') }}">
        <i class="fas fa-fw fa-user"></i>
       <span>Aktifitas</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link " href="{{ url('/admin/web-settings') }}">
+       <i class="fas fa-fw fa-user"></i>
+      <span>Web Setting</span>
     </a>
   </li>
 

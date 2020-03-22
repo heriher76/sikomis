@@ -62,7 +62,11 @@
                 <td style="display: none;">{{ $user->anakKeberapa }}</td>
                 <td style="display: none;">{{ $user->harapan }}</td>
                 <td>
-                    <!-- <a href="{{ url('admin/verifikasi/lk/'.$user->id) }}" class="btn btn-primary btn-sm">LK</a> -->
+                    <form action="{{ url('/admin/kader/'.$user->id) }}" method="POST">
+                      {{ csrf_field() }}
+                      {{ method_field('delete') }}
+                      <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Yakin Akan Dihapus?');">Hapus</button>
+                    </form>
                 </td>
             </tr>
         @endforeach

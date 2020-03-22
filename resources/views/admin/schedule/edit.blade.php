@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="header">
                     <h1>
-                        Edit Berita
+                        Edit Agenda
                     </h1>
                 </div>
                 <div class="body">
@@ -19,19 +19,26 @@
                         <div class="form-group form-float">
                             <div class="form-line">
                                 <label class="form-label">Judul</label>
-                                <input type="text" name="title" class="form-control" form="willSubmit" value="{{ $berita->title }}">
+                                <input type="text" name="title" class="form-control" form="willSubmit" value="{{ $schedule->title }}">
                             </div>
                         </div>
 
-                        <textarea name="description" class="form-control my-editor" form="willSubmit">{{ $berita->description }}</textarea>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Tanggal</label>
+                                <input type="date" name="date" class="form-control" form="willSubmit" value="{{ $schedule->date }}">
+                            </div>
+                        </div>
+
+                        <textarea name="description" class="form-control my-editor" form="willSubmit">{{ $schedule->description }}</textarea>
 						<br>
 						<h4>Thumbnail</h4>
 						<div class="row">
 							<div class="col-md-4">
 								<div class="form-group form-float">
-                                    @if(isset($berita->thumbnail))
+                                    @if(isset($schedule->thumbnail))
                                         <br>
-                                        <img class="img-responsive" style="max-width: 30vw; max-height: 30vh;" src="{{ url('news-thumbnail/'.$berita->thumbnail) }}">
+                                        <img class="img-responsive" style="max-width: 30vw; max-height: 30vh;" src="{{ url('schedule-thumbnail/'.$schedule->thumbnail) }}">
                                     @endif 
 		                            <input type="file" name="thumbnail" class="form-control" form="willSubmit">
 		                        </div>
@@ -45,18 +52,18 @@
             <div class="card">
                 <div class="header">
               		<p>Publish Status = </p>
-              		<form action="{{ url('admin/news/'.$berita->slug) }}" id="willSubmit" method="POST" enctype="multipart/form-data">
+              		<form action="{{ url('admin/schedules/'.$schedule->slug) }}" id="willSubmit" method="POST" enctype="multipart/form-data">
               			{{ csrf_field() }}
                         {{ method_field('put') }}
-	          			<input type="radio" id="published" class="with-gap" name="publish_status" value="1" @if ($berita->publish_status == 1) checked @endif>
+	          			<input type="radio" id="published" class="with-gap" name="publish_status" value="1" @if ($schedule->publish_status == 1) checked @endif>
 	          			<label for="published">Publish</label>
-	          			<input type="radio" id="drafted" class="with-gap" name="publish_status" value="0" @if ($berita->publish_status == 0) checked @endif>
+	          			<input type="radio" id="drafted" class="with-gap" name="publish_status" value="0" @if ($schedule->publish_status == 0) checked @endif>
 	          			<label for="drafted">Draft</label>
 	                    <br><br>
 	              		<div class="form-group form-float">	
 	              			<div class="form-line">
                         <label class="form-label">Slug <em>*optional</em></label>
-	              				<input type="text" name="slug" class="form-control" value="{{ $berita->slug }}">
+	              				<input type="text" name="slug" class="form-control" value="{{ $schedule->slug }}">
 	              			</div>
 	              		</div>
 	                    <button type="submit" class="btn btn-primary m-t-15 waves-effect">Update</button>

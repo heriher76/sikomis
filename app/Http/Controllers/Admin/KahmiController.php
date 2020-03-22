@@ -11,29 +11,16 @@ class KahmiController extends Controller
 {
     public function index()
     {
-    	$users = Role::where('name', 'user')->first()->users()->get();
+    	$users = Role::where('name', 'kahmi')->first()->users()->get();
 
     	return view('admin.kahmi.index', compact('users'));
     }
 
-    public function register()
+    public function destroy($id)
     {
-      return view();
-    }
+      User::destroy($id);
 
-    public function postRegister(Request $request)
-    {
-      $data = $request->all();
-
-      $user = User::create([
-          'name' => $data['name'],
-          'email' => $data['email'],
-          'status' => $data['status'],
-          'jk' => $data['jk']
-      ]);
-      $user->attachRole(2);
-
-      Alert::success('Berhasil', 'Terimakasih Kanda Sudah Register!');
+      alert()->success('User Berhasil Dihapus !', '...');
 
       return back();
     }

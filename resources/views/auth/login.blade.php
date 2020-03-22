@@ -76,7 +76,7 @@
                     <h5 style="color: white;">Kader / KAHMI Saintek?</h5><u><a href="#" onclick="showLogin();" style="color: white;"><h5> Masuk</h5></a></u>
                     <br>
                 </center>
-                <p style="position: absolute; bottom: 7vw; left: 8vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</p>
+                <p style="position: absolute; bottom: 7vw; left: 11vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</p>
             </div>
 
             <div class="hidden-sm hidden-md hidden-lg">
