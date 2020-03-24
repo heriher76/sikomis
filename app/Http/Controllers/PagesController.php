@@ -16,6 +16,18 @@ class PagesController extends Controller
         	return view('pages.mustLK');
     }
 
+    public function profile()
+    {
+    	$me = \Auth::user();
+
+    	return view('pages.users.profile', compact('me'));
+    }
+
+    public function organizations()
+    {
+    	return view('pages.organizations');
+    }
+
     public function activities()
     {
     	return view('pages.activities');

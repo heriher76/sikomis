@@ -22,7 +22,7 @@
 				<li><a href="javascript:void(0);" onclick="return alert('Coming Soon');">Karir</a></li>
 				<li class="dropdown magz-dropdown" ><a href="#">{{ \Auth::user()->name }} <i class="ion-ios-arrow-right"></i></a>
 					<ul class="dropdown-menu">
-						<li><a href="#"><i class="icon ion-person"></i> Profile</a></li>
+						<li><a href="{{ url('profile') }}"><i class="icon ion-person"></i> Profile</a></li>
 						<li>
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

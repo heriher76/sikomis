@@ -37,6 +37,8 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/', 'PagesController@home');
+    Route::get('/profile', 'PagesController@profile');
+	Route::get('/organizations', 'PagesController@organizations');
 	Route::get('/news', 'PagesController@news');
 	Route::get('/activities', 'PagesController@activities');
 	Route::get('/news-schedule', 'PagesController@newsSchedule');
