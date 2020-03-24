@@ -29,16 +29,9 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link " href="{{ url('/admin/news') }}">
+    <a class="nav-link " href="{{ url('/admin/news-schedules') }}">
        <i class="fas fa-fw fa-user"></i>
-      <span>Berita</span>
-    </a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link " href="{{ url('/admin/schedules') }}">
-       <i class="fas fa-fw fa-user"></i>
-      <span>Agenda</span>
+      <span>Berita / Agenda</span>
     </a>
   </li>
 

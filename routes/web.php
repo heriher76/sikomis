@@ -32,11 +32,18 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 	Route::get('/admin/verifikasi/upgrading/{id}', 'Admin\VerifikasiController@verifUpgrading');
 	Route::get('/admin/verifikasi/pelantikan/{id}', 'Admin\VerifikasiController@verifPelantikan');
 
-	Route::resource('/admin/news', 'Admin\NewsController');
-	Route::resource('/admin/schedules', 'Admin\ScheduleController');
+	Route::resource('/admin/news-schedules', 'Admin\NewsScheduleController');
 });
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/', 'PagesController@home');
 	Route::get('/news', 'PagesController@news');
+	Route::get('/activities', 'PagesController@activities');
+	Route::get('/news-schedule', 'PagesController@newsSchedule');
+
+	Route::get('/articles', 'PagesController@articles');
+
+	Route::get('/articles/{slug}', 'PagesController@showArticle');
+
+	Route::get('/{slug}', 'PagesController@showNewsSchedule');
 });

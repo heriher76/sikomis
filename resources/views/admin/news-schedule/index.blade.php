@@ -6,9 +6,9 @@
             <div class="card">
                 <div class="header">
                     <h1>
-                        Berita
+                        Berita / Agenda
                     </h1>
-                    <a href="{{ url('admin/news/create') }}" class="btn btn-primary waves-effect">Create</a>
+                    <a href="{{ url('admin/news-schedules/create') }}" class="btn btn-primary waves-effect">Create</a>
                 </div>
                 <br>
                 <div class="body">
@@ -31,11 +31,11 @@
                                     <td>{{ $berita->user->name }}</td>
                                     <td>{{ $berita->created_at }}</td>
                                     <td>
-                                        <a href="{{ url('admin/news/'.$berita->slug.'/edit') }}" class="btn btn-success btn-xs waves-effect">Edit</a>
-                                        <form action="{{ url('admin/news/'.$berita->id) }}" method="POST" style="display: inline;">
+                                        <a href="{{ url('admin/news-schedules/'.$berita->slug.'/edit') }}" class="btn btn-success btn-xs waves-effect">Edit</a>
+                                        <form action="{{ url('admin/news-schedules/'.$berita->id) }}" method="POST" style="display: inline;">
                                             {{ csrf_field() }}
                                             {{ method_field('delete') }}
-                                            <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda Ingin Menghapus Berita Ini ?');">Delete</button>
+                                            <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda Ingin Menghapus Item Ini ?');">Delete</button>
                                         </form>
                                     </td>
                                 </tr>

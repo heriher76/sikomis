@@ -39,58 +39,9 @@
 								</a>
 							</div>						
 						</div>
-						<!-- <div class="col-md-8 col-sm-12">
-							<form class="search" autocomplete="off">
-								<div class="form-group">
-									<div class="input-group">
-										<input type="text" name="q" class="form-control" placeholder="Cari Berita...">									
-										<div class="input-group-btn">
-											<button class="btn btn-primary"><i class="ion-search"></i></button>
-										</div>
-									</div>
-								</div>
-								
-							</form>								
-						</div> -->
-						<!-- <div class="collapse navbar-collapse" id="app-navbar-collapse"> -->
-
-			            <!-- Right Side Of Navbar -->
-			            <!-- <ul class="nav navbar-nav navbar-right"> -->
-				                <!-- Authentication Links -->
-				                <!-- @guest
-				                    <li><a href="{{ route('login') }}"><h4 style="color: #0F2C13; ">Login</h4></a></li> -->
-				                    <!-- <li><a href="{{ route('register') }}"><h4 style="color: #0F2C13; ">Register</h4></a></li> -->
-				                <!-- @else
-				                    <li class="dropdown">
-				                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-				                            {{ Auth::user()->name }} <span class="caret"></span>
-				                        </a>
-
-				                        <ul class="dropdown-menu">
-				                            <li>
-				                            	<a href="{{ url('/my-profile') }}">
-				                                    Profile
-				                                </a>
-				                            </li>
-				                            <li>
-				                                <a href="{{ route('logout') }}"
-				                                    onclick="event.preventDefault();
-				                                             document.getElementById('logout-form').submit();">
-				                                    Logout
-				                                </a>
-
-				                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-				                                    {{ csrf_field() }}
-				                                </form>
-				                            </li>
-				                        </ul>
-				                    </li>
-				                @endguest
-				            </ul>
-				        </div> -->
 						<div style="position: absolute;">
 							<ul class="nav-icons">
-								<li><a href="register.html"><i class="ion-person-add"></i><div>Donasi Ke Komisariat? Klik</div></a></li>
+								<li><a href="#"><i class="ion-person-add"></i><div>Donasi Ke Komisariat? Klik</div></a></li>
 							</ul>
 						</div>
 					</div>

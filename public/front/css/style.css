@@ -1226,7 +1226,7 @@ section.search .search-result {
   background-color: #FFFFFF;
 }
 .firstbar .brand {
-  /*float: left;*/
+  float: left;
   margin: 20px 0;
 }
 .firstbar .brand a {
@@ -1235,7 +1235,7 @@ section.search .search-result {
 .firstbar .brand img {
   width: 200px;
   display: block;
-  /*float: left;*/
+  float: left;
 }
 .firstbar .brand .text {
   font-size: 6em;
@@ -1855,7 +1855,7 @@ article footer .btn-primary:focus {
 }
 .menu .brand {
   display: none;
-  /*float: left;*/
+  float: left;
   width: 100px;
   height: 55px;
   line-height: 52px;

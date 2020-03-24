@@ -10,9 +10,34 @@ class PagesController extends Controller
     {
     	$me = \Auth::user();
 
-    	if($me->sudahPelantikan == 1)
+    	if($me->sudahPelantikan == 1 || $me->roles[0]->name == 'kahmi' || $me->roles[0]->name == 'admin')
         	return view('pages.home');
         else
         	return view('pages.mustLK');
+    }
+
+    public function activities()
+    {
+    	return view('pages.activities');
+    }
+
+    public function newsSchedule()
+    {
+    	return view('pages.news.index');
+    }
+
+    public function showNewsSchedule()
+    {
+    	return view('pages.news.show');
+    }
+
+    public function articles()
+    {
+    	return view('pages.articles.index');
+    }
+
+    public function showArticle()
+    {
+    	return view('pages.articles.show');
     }
 }
