@@ -37,12 +37,43 @@
 										<img src="{{ url('images/logo_komisariat.png') }}" alt="Komisariat Logo" style=" display: none; margin-left: 37vw; margin-bottom: -40px !important; margin-top: -40px !important;" class="visible-md visible-lg">
 										<img src="{{ url('images/logo_komisariat.png') }}" alt="Komisariat Logo" style="display: none; margin-left: 21vw; margin-bottom: -40px !important; margin-top: -40px !important;" class="visible-sm visible-xs">
 								</a>
-							</div>						
+							</div>
 						</div>
 						<div style="position: absolute;">
 							<ul class="nav-icons">
-								<li><a href="#"><i class="ion-person-add"></i><div>Donasi Ke Komisariat? Klik</div></a></li>
+								<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="ion-person-add"></i><div>Donasi Ke Komisariat? Klik</div></a></li>
 							</ul>
+							<!-- Modal -->
+							<div id="myModal" class="modal fade" role="dialog">
+							  <div class="modal-dialog">
+
+							    <!-- Modal content-->
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal">&times;</button>
+							        <h4 class="modal-title">Info Donasi</h4>
+							      </div>
+							      <div class="modal-body">
+							        <p>Assalamualaikum wr wb. Untuk menunjang perkaderan, perjuangan dan membangun komisariat sains & teknologi, silahkan rakanda/ayunda dapat memberikan bantuan materil nya kepada:
+												<b>
+													<br> No Rek : {{ $donation->no_rek }}
+													<br> A/n : {{ $donation->atas_nama }}
+													<br> Bank : {{ $donation->bank }}
+												</b><br>
+												Terimakasih atas bantuan rakanda/ayunda, semoga menjadi berkah dan digantikan dengan yang lebih oleh Allah SWT. Jika berkenan, mohon konfirmasi via Whatsapp untuk pendataan komisariat kepada:
+												<b><br> {{ $donation->no_wa }} ({{ $donation->nama_wa }})</b>
+												<br><a href="https://web.whatsapp.com/send?phone={{ $donation->no_wa }}&text=Assalamualaikum, saya ingin konfirmasi bahwa saya sudah TF kepada pihak komisariat sains teknologi, mohon dipergunakan untuk hal yang bermanfaat. Yakin Usaha Sampai." style="color: green;">Atau klik disini</a>
+												<br><br>
+												<b><i>Yakin Usaha Sampai!</i></b>
+											</p>
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							      </div>
+							    </div>
+
+							  </div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -58,7 +89,7 @@
 				<div class="row">
 
 					@yield('contents')
-					
+
 				</div>
 			</div>
 		</section>
@@ -103,7 +134,7 @@
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="block">
-							<h1 class="block-title">Berita & Agenda Terbaru</h1>
+							<h1 class="block-title">Berita & Agenda Lainnya</h1>
 							<div class="block-body">
 								<article class="article-mini">
 									<div class="inner">
@@ -197,7 +228,7 @@
 							</div>
 						</div>
 						<div class="line"></div>
-						
+
 					</div>
 				</div>
 				<div class="row">

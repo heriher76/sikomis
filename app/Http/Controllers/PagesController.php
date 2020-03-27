@@ -3,8 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Infoweb;
+use App\Donation;
+use View;
 
-class PagesController extends Controller
+class BaseController extends Controller {
+    public function __construct() {
+       $donation = Donation::first();
+
+       View::share ('donation', $donation );
+    }
+}
+
+class PagesController extends BaseController
 {
     public function home()
     {

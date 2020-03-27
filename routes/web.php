@@ -33,11 +33,22 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 	Route::get('/admin/verifikasi/pelantikan/{id}', 'Admin\VerifikasiController@verifPelantikan');
 
 	Route::resource('/admin/news-schedules', 'Admin\NewsScheduleController');
+	Route::resource('/admin/articles', 'Admin\ArticleController');
+	Route::resource('/admin/activities', 'Admin\ActivityController');
+
+	Route::get('/admin/organizations', 'Admin\OrganizationController@index');
+	Route::put('/admin/organizations/update', 'Admin\OrganizationController@update');
+
+	Route::get('/admin/donations', 'Admin\DonationController@index');
+	Route::put('/admin/donations/update', 'Admin\DonationController@update');
+
+	Route::get('/admin/web-settings', 'Admin\WebSettingController@index');
+	Route::put('/admin/web-settings/update', 'Admin\WebSettingController@update');
 });
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/', 'PagesController@home');
-    Route::get('/profile', 'PagesController@profile');
+  Route::get('/', 'PagesController@home');
+  Route::get('/profile', 'PagesController@profile');
 	Route::get('/organizations', 'PagesController@organizations');
 	Route::get('/news', 'PagesController@news');
 	Route::get('/activities', 'PagesController@activities');

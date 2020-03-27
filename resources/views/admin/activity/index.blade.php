@@ -6,9 +6,9 @@
             <div class="card">
                 <div class="header">
                     <h1>
-                        Agenda
+                        Aktifitas
                     </h1>
-                    <a href="{{ url('admin/schedules/create') }}" class="btn btn-primary waves-effect">Create</a>
+                    <a href="{{ url('admin/activities/create') }}" class="btn btn-primary waves-effect">Create</a>
                 </div>
                 <br>
                 <div class="body">
@@ -16,24 +16,28 @@
                         <table id="table_id" class="display table table-condensed table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Nama</th>
-                                    <th>Tanggal</th>
-                                    <th>Created At</th>
+                                    <th>No</th>
+                                    <th>Deskripsi</th>
+                                    <th>Like</th>
+                                    <th>Dislike</th>
+                                    <th>By</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($schedules as $agenda)
+                                @foreach($activities as $key => $activity)
                                 <tr>
-                                    <td>{{ $agenda->title }}</td>
-                                    <td>{{ $agenda->date }}</td>
-                                    <td>{{ $agenda->created_at }}</td>
+                                    <td>{{ $key+1 }}</td>
+                                    <td>{{ str_limit($activity->description, $limit = 150, $end = '...') }}</td>
+                                    <td>{{ $activity->like }}</td>
+                                    <td>{{ $activity->dislike }}</td>
+                                    <td>{{ $activity->user->name }}</td>
                                     <td>
-                                        <a href="{{ url('admin/schedules/'.$agenda->slug.'/edit') }}" class="btn btn-success btn-xs waves-effect">Edit</a>
-                                        <form action="{{ url('admin/schedules/'.$agenda->id) }}" method="POST" style="display: inline;">
+                                        <a href="{{ url('admin/activities/'.$activity->id.'/edit') }}" class="btn btn-success btn-xs waves-effect">Edit</a>
+                                        <form action="{{ url('admin/activities/'.$activity->id) }}" method="POST" style="display: inline;">
                                             {{ csrf_field() }}
                                             {{ method_field('delete') }}
-                                            <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda Ingin Menghapus Agenda Ini ?');">Delete</button>
+                                            <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda Ingin Menghapus Item Ini ?');">Delete</button>
                                         </form>
                                     </td>
                                 </tr>

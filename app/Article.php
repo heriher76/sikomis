@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Activity extends Model
+class Article extends Model
 {
-    protected $fillable = ['description', 'like', 'dislike', 'user_id'];
+    protected $fillable = ['title', 'description', 'thumbnail', 'slug', 'publish_status', 'user_id'];
 
     public function user()
     {

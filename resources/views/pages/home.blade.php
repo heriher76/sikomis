@@ -58,7 +58,7 @@
     </div>
 
     <div class="line">
-        <div>Berita Terbaru</div>
+        <div>Berita & Agenda Terbaru</div>
     </div>
     <div class="row">
         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -115,7 +115,7 @@
             <div class="row">
                 <article class="article col-md-12">
                     <div class="inner">
-                        <figure>                                
+                        <figure>
                             <a href="single.html">
                                 <img src="{{ url('front/images/news/img05.jpg') }}" alt="Sample Article">
                             </a>
@@ -162,9 +162,9 @@
             </div>
         </div>
     </div>
-    
+
     <div class="line">
-        <div>Berita Lainnya</div>
+        <div>Berita & Agenda Terpopuler</div>
     </div>
     <div class="row">
         <article class="col-md-12 article-list">
@@ -278,9 +278,9 @@
     </div>
 </div>
 <div class="col-xs-6 col-md-4 sidebar" id="sidebar">
-    
+
     <aside>
-        <h1 class="aside-title">Event <a href="#" class="all">Lihat Semua <i class="ion-ios-arrow-right"></i></a></h1>
+        <h1 class="aside-title">Artikel <a href="#" class="all">Lihat Semua <i class="ion-ios-arrow-right"></i></a></h1>
         <div class="aside-body">
             <article class="article-mini">
                 <div class="inner">
@@ -358,9 +358,9 @@
     </aside>
 
     <aside>
-    
+
         <h1 class="title-col">
-            Promosi
+            Artikel Terpopuler
             <div class="carousel-nav" id="hot-news-nav">
                 <div class="prev">
                     <i class="ion-ios-arrow-left"></i>

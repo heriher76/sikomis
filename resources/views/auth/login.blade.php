@@ -51,7 +51,7 @@
           </div>
 
         </div>
-        
+
         <img class="hidden-xs" src="{{ url('images/logo_hmi.png') }}" style="width: 25%; position: absolute; left: 45vw; top: 5vw; z-index: 9999;" alt="">
 
         <img class="hidden-sm hidden-md hidden-lg" src="{{ url('images/logo_hmi.png') }}" style="width: 25vw; position: absolute; left: 41vw; top: 130vw; z-index: 9999;" alt="">
@@ -91,7 +91,7 @@
                 <p style="position: absolute; bottom: 0vh; left: 11vw; color: #D1BA91; font-size: 6vw;">Berfikir Keras Lakukan dengan Cerdas</p>
             </div>
         </div>
-        
+
         <div class="loginPanel" style="display: none;">
             <div class="panel panel-default hidden-xs" style="margin: 30px 80px; margin-top: 7vw;">
                 <div class="panel-heading">Login</div>
@@ -152,7 +152,7 @@
                         <h5 style="color: #0F2C13; cursor: pointer;" onclick="showFront();">Daftar Akun?</h5>
                     </form>
 
-                    <p style="position: absolute; bottom: 7vw; left: 8vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</p>
+                    <p style="position: absolute; bottom: 7vw; left: 11vw; color: #D1BA91;">Berfikir Keras Lakukan dengan Cerdas</p>
                 </div>
             </div>
         </div>

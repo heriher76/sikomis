@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="header">
                     <h1>
-                        Tambah Agenda
+                        Edit Aktifitas
                     </h1>
                 </div>
                 <div class="body">
@@ -18,44 +18,31 @@
                         {{ csrf_field() }} -->
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <label class="form-label">Nama</label>
-                                <input type="text" name="title" class="form-control" form="willSubmit">
+                                <label class="form-label">Jumlah Like</label>
+                                <input type="text" name="like" class="form-control" form="willSubmit" value="{{ $activity->like }}">
                             </div>
                         </div>
 
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <label class="form-label">Tanggal</label>
-                                <input type="date" name="date" class="form-control" form="willSubmit">
+                                <label class="form-label">Jumlah DisLike</label>
+                                <input type="text" name="dislike" class="form-control" form="willSubmit" value="{{ $activity->dislike }}">
                             </div>
                         </div>
 
-                        <textarea name="description" class="form-control my-editor" form="willSubmit"></textarea>
-						
-            						<h4>Thumbnail</h4>
-            						<div class="row">
-            							<div class="col-md-4">
-            								<div class="form-group form-float">
-  	                            <input type="file" name="thumbnail" class="form-control" form="willSubmit">
-  	                        </div>
-            							</div>
-            						</div>
-                        <!-- </form> -->
+                        <label>Deskripsi</label>
+                        <textarea name="description" class="form-control my-editor" form="willSubmit">{!! $activity->description !!}</textarea>
+
                       </div>
                   </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <div class="card">
                             <div class="header">
-                              <form action="{{ url('admin/schedules') }}" id="willSubmit" method="POST" enctype="multipart/form-data">
-                                {{ csrf_field() }}
-            	              		<div class="form-group form-float">	
-            	              			<div class="form-line">
-                                    <label class="form-label">Slug <em>*optional</em></label>
-            	              				<input type="text" name="slug" class="form-control">
-            	              			</div>
-            	              		</div>
-            	                    <button type="submit" class="btn btn-primary m-t-15 waves-effect">Create</button>
+                          		<form action="{{ url('admin/activities/'.$activity->id) }}" id="willSubmit" method="POST">
+                          			{{ csrf_field() }}
+                                {{ method_field('put') }}
+            	                    <button type="submit" class="btn btn-primary m-t-15 waves-effect">Update</button>
                           		</form>
                             </div>
                         </div>

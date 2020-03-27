@@ -6,9 +6,9 @@
             <div class="card">
                 <div class="header">
                     <h1>
-                        Berita / Agenda
+                        Artikel
                     </h1>
-                    <a href="{{ url('admin/news-schedules/create') }}" class="btn btn-primary waves-effect">Create</a>
+                    <a href="{{ url('admin/articles/create') }}" class="btn btn-primary waves-effect">Create</a>
                 </div>
                 <br>
                 <div class="body">
@@ -25,16 +25,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($newsNews as $key => $berita)
+                                @foreach($articles as $key => $article)
                                 <tr>
 																		<td>{{ $key+1 }}</td>
-                                    <td>{{ $berita->title }}</td>
-                                    <td>@php echo ($berita->publish_status == 1) ? 'Published' : 'Drafted'; @endphp</td>
-                                    <td>{{ $berita->user->name }}</td>
-                                    <td>{{ $berita->created_at }}</td>
+                                    <td>{{ $article->title }}</td>
+                                    <td>@php echo ($article->publish_status == 1) ? 'Published' : 'Drafted'; @endphp</td>
+                                    <td>{{ $article->user->name }}</td>
+                                    <td>{{ $article->created_at }}</td>
                                     <td>
-                                        <a href="{{ url('admin/news-schedules/'.$berita->slug.'/edit') }}" class="btn btn-success btn-xs waves-effect">Edit</a>
-                                        <form action="{{ url('admin/news-schedules/'.$berita->id) }}" method="POST" style="display: inline;">
+                                        <a href="{{ url('admin/articles/'.$article->slug.'/edit') }}" class="btn btn-success btn-xs waves-effect">Edit</a>
+                                        <form action="{{ url('admin/articles/'.$article->id) }}" method="POST" style="display: inline;">
                                             {{ csrf_field() }}
                                             {{ method_field('delete') }}
                                             <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda Ingin Menghapus Item Ini ?');">Delete</button>
