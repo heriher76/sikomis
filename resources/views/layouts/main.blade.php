@@ -112,7 +112,7 @@
 									Jl. Permai V, Cipadung, Kec. Cibiru, Kota Bandung, Jawa Barat 40614 <br>
 								</p>
 								<br>
-								<a href="page.html" class="btn btn-magz white">Profil Kabinet <i class="ion-ios-arrow-thin-right"></i></a>
+								<a href="{{ url('organizations') }}" class="btn btn-magz white">Profil Kabinet <i class="ion-ios-arrow-thin-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -121,12 +121,12 @@
 							<h1 class="block-title">Menu </h1>
 							<div class="block-body">
 								<ul>
-									<li><a href="#">Kabinet</a></li>
-									<li><a href="#">Berita & Agenda</a></li>
-									<li><a href="#">Artikel</a></li>
-									<li><a href="#">Aktifitas</a></li>
-									<li><a href="#">KomiShop</a></li>
-									<li><a href="#">Karir</a></li>
+									<li><a href="{{ url('organizations') }}">Kabinet</a></li>
+									<li><a href="{{ url('news-schedule') }}">Berita & Agenda</a></li>
+									<li><a href="{{ url('articles') }}">Artikel</a></li>
+									<li><a href="{{ url('activities') }}">Aktifitas</a></li>
+									<li><a href="javascript:void(0);" onclick="return alert('Coming Soon');">KomiShop</a></li>
+									<li><a href="javascript:void(0);" onclick="return alert('Coming Soon');">Karir</a></li>
 								</ul>
 							</div>
 						</div>
@@ -136,55 +136,21 @@
 						<div class="block">
 							<h1 class="block-title">Berita & Agenda Lainnya</h1>
 							<div class="block-body">
+								@foreach($newsSchedules as $news)
 								<article class="article-mini">
 									<div class="inner">
 										<figure>
-											<a href="single.html">
-												<img src="{{ url('front/images/news/img12.jpg') }}" alt="Sample Article">
+											<a href="{{ url('news-schedule/'.$news->slug) }}">
+												<img src="{{ url('news-thumbnail/'.$news->thumbnail) }}" alt="Thumbnail">
 											</a>
 										</figure>
 										<div class="padding">
-											<h1><a href="single.html">Donec consequat lorem quis augue pharetra</a></h1>
+											<h1><a href="{{ url('news-schedule/'.$news->slug) }}">{{ $news->title }}</a></h1>
 										</div>
 									</div>
 								</article>
-								<article class="article-mini">
-									<div class="inner">
-										<figure>
-											<a href="single.html">
-												<img src="{{ url('front/images/news/img14.jpg') }}" alt="Sample Article">
-											</a>
-										</figure>
-										<div class="padding">
-											<h1><a href="single.html">eu dapibus risus aliquam etiam ut venenatis</a></h1>
-										</div>
-									</div>
-								</article>
-								<article class="article-mini">
-									<div class="inner">
-										<figure>
-											<a href="single.html">
-												<img src="{{ url('front/images/news/img15.jpg') }}" alt="Sample Article">
-											</a>
-										</figure>
-										<div class="padding">
-											<h1><a href="single.html">Nulla facilisis odio quis gravida vestibulum </a></h1>
-										</div>
-									</div>
-								</article>
-								<article class="article-mini">
-									<div class="inner">
-										<figure>
-											<a href="single.html">
-												<img src="{{ url('front/images/news/img16.jpg') }}" alt="Sample Article">
-											</a>
-										</figure>
-										<div class="padding">
-											<h1><a href="single.html">Proin venenatis pellentesque arcu vitae </a></h1>
-										</div>
-									</div>
-								</article>
-								<a href="#" class="btn btn-magz white btn-block">Lihat Semua <i class="ion-ios-arrow-thin-right"></i></a>
+								@endforeach
+								<a href="{{ url('news-schedule') }}" class="btn btn-magz white btn-block">Lihat Semua <i class="ion-ios-arrow-thin-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -195,31 +161,31 @@
 								<p>Ikuti kami dan terus update informasi terbaru.</p>
 								<ul class="social trp">
 									<li>
-										<a href="#" class="facebook">
+										<a href="{{ $infoweb->facebook }}" class="facebook">
 											<svg><rect width="0" height="0"/></svg>
 											<i class="ion-social-facebook"></i>
 										</a>
 									</li>
 									<li>
-										<a href="#" class="twitter">
+										<a href="{{ $infoweb->twitter }}" class="twitter">
 											<svg><rect width="0" height="0"/></svg>
 											<i class="ion-social-twitter-outline"></i>
 										</a>
 									</li>
 									<li>
-										<a href="#" class="youtube">
+										<a href="{{ $infoweb->youtube }}" class="youtube">
 											<svg><rect width="0" height="0"/></svg>
 											<i class="ion-social-youtube-outline"></i>
 										</a>
 									</li>
 									<li>
-										<a href="#" class="googleplus">
+										<a href="{{ $infoweb->google }}" class="googleplus">
 											<svg><rect width="0" height="0"/></svg>
 											<i class="ion-social-googleplus"></i>
 										</a>
 									</li>
 									<li>
-										<a href="#" class="instagram">
+										<a href="{{ $infoweb->instagram }}" class="instagram">
 											<svg><rect width="0" height="0"/></svg>
 											<i class="ion-social-instagram-outline"></i>
 										</a>
@@ -236,7 +202,7 @@
 						<div class="copyright">
 							COPYRIGHT &copy; HMI KOMISARIAT SAINS & TEKNOLOGI CAKABA 2020
 							<div>
-								Made with <i class="ion-heart"></i> by <a href="http://heriher76.github.io">HeriHerPlay</a>
+								Made with <i class="ion-heart"></i> by <a href="http://heriher76.github.io" target="_blank">HeriHerPlay</a>
 							</div>
 						</div>
 					</div>

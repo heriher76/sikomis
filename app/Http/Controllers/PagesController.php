@@ -5,13 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Infoweb;
 use App\Donation;
+use App\News;
+use App\Article;
+use App\Activity;
 use View;
 
 class BaseController extends Controller {
     public function __construct() {
        $donation = Donation::first();
+       $infoweb = Infoweb::first();
+       $newsSchedules = News::all()->take(4);
 
-       View::share ('donation', $donation );
+       View::share ('donation', $donation);
+       View::share ('infoweb', $infoweb);
+       View::share ('newsSchedules', $newsSchedules);
     }
 }
 
@@ -21,10 +28,16 @@ class PagesController extends BaseController
     {
     	$me = \Auth::user();
 
-    	if($me->sudahPelantikan == 1 || $me->roles[0]->name == 'kahmi' || $me->roles[0]->name == 'admin')
-        	return view('pages.home');
-        else
-        	return view('pages.mustLK');
+    	if($me->sudahPelantikan == 1 || $me->roles[0]->name == 'kahmi' || $me->roles[0]->name == 'admin') {
+        $hotNews = News::orderBy('created_at', 'desc')->take(4)->get();
+        $popularNews = News::whereNotIn('id', $hotNews->pluck('id'))->take(6)->get();
+        $articles = Article::orderBy('created_at', 'desc')->take(7)->get();
+        $activities = Activity::orderBy('created_at', 'desc')->take(8)->get();
+
+        return view('pages.home', compact('hotNews', 'popularNews', 'articles', 'activities'));
+      }else{
+        return view('pages.mustLK');
+      }
     }
 
     public function profile()
