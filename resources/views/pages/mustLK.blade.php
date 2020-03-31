@@ -19,7 +19,7 @@
                     <br>
                     Konfirmasi Pendaftaran (Whatsapp): 
                     <br>
-                    089615266856 ( Heri )
+                    {{ $infoweb->number_contact_lk }} ( {{ $infoweb->name_contact_lk }} )
                 </div>
             </div>
         </div>

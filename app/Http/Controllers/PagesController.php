@@ -38,7 +38,9 @@ class PagesController extends BaseController
 
 			return view('pages.home', compact('hotNews', 'popularNews', 'articles', 'activities'));
 		}else{
-			return view('pages.mustLK');
+			$infoweb = Infoweb::first();
+
+			return view('pages.mustLK', compact('infoweb'));
 		}
     }
 
