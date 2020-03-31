@@ -8,6 +8,7 @@ use App\Donation;
 use App\News;
 use App\Article;
 use App\Activity;
+use App\Organization;
 use View;
 
 class BaseController extends Controller {
@@ -49,7 +50,9 @@ class PagesController extends BaseController
 
     public function organizations()
     {
-    	return view('pages.organizations');
+    	$organization = Organization::first();
+
+    	return view('pages.organizations', compact('organization'));
     }
 
     public function activities()
@@ -59,21 +62,35 @@ class PagesController extends BaseController
 
     public function newsSchedule()
     {
-    	return view('pages.news.index');
+    	$articles = Article::orderBy('created_at', 'desc')->where('publish_status', 1)->take(3)->get();
+    	$newsSchedules = News::orderBy('created_at', 'desc')->where('publish_status', 1)->paginate(5);
+
+    	return view('pages.news.index', compact('articles', 'newsSchedules'));
     }
 
-    public function showNewsSchedule()
+    public function showNewsSchedule($slug)
     {
-    	return view('pages.news.show');
+    	$news = News::where('slug', $slug)->first();
+    	$otherNews = News::whereNotIn('id', [$news->id])->where('publish_status', 1)->orderBy('updated_at', 'desc')->take(2)->get();
+    	$articles = Article::where('publish_status', 1)->orderBy('updated_at', 'desc')->take(3)->get();
+
+    	return view('pages.news.show', compact('news', 'otherNews', 'articles'));
     }
 
     public function articles()
     {
-    	return view('pages.articles.index');
+    	$articles = Article::orderBy('created_at', 'desc')->where('publish_status', 1)->paginate(5);
+    	$newsSchedules = News::orderBy('created_at', 'desc')->where('publish_status', 1)->take(3)->get();
+
+    	return view('pages.articles.index', compact('articles', 'newsSchedules'));
     }
 
-    public function showArticle()
+    public function showArticle($slug)
     {
-    	return view('pages.articles.show');
+    	$article = Article::where('slug', $slug)->first();
+    	$otherArticles = Article::whereNotIn('id', [$article->id])->where('publish_status', 1)->orderBy('updated_at', 'desc')->take(2)->get();
+    	$newsSchedules = News::where('publish_status', 1)->orderBy('updated_at', 'desc')->take(3)->get();
+
+    	return view('pages.articles.show', compact('article', 'otherArticles', 'newsSchedules'));
     }
 }

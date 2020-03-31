@@ -47,11 +47,24 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">Modal Header</h4>
+								<h4 class="modal-title">Info Donasi</h4>
 							</div>
 							<div class="modal-body">
-								<p>Some text in the modal.</p>
-							</div>
+						        <p>Assalamualaikum wr wb. Untuk menunjang perkaderan, perjuangan dan membangun komisariat sains & teknologi, silahkan rakanda/ayunda dapat memberikan bantuan materil nya kepada:
+									<b>
+										<br> No Rek : {{ $donation->no_rek }}
+										<br> A/n : {{ $donation->atas_nama }}
+										<br> Bank : {{ $donation->bank }}
+									</b><br>
+									Terimakasih atas bantuan rakanda/ayunda, semoga menjadi berkah dan digantikan dengan yang lebih oleh Allah SWT. Jika berkenan, mohon konfirmasi melalui form berikut:
+									<br><a href="https://forms.gle/4gkYpFuuXM4MhqSN9" style="color: green;" target="_blank">Klik Disini</a> 
+									<br><br>atau via Whatsapp pihak komisariat Sains Teknologi ke:
+									<b><br> {{ $donation->no_wa }} ({{ $donation->nama_wa }})</b>
+									<br><a target="_blank" href="https://web.whatsapp.com/send?phone={{ $donation->no_wa }}&text=Assalamualaikum, saya ingin konfirmasi bahwa saya sudah TF kepada pihak komisariat sains teknologi, mohon dipergunakan untuk hal yang bermanfaat. Yakin Usaha Sampai." style="color: green;">Atau klik disini</a>
+									<br><br>
+									<b><i>Yakin Usaha Sampai!</i></b>
+								</p>
+						      </div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 							</div>

@@ -15,15 +15,15 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner" style="border-radius: 10%; min-height: 40vh; max-height: 40vh;">
             <div class="item active">
-              <img src="{{ url('slider/a.jpeg') }}" alt="Slider Pertama" style="height: 40vh; width: 100%;">
+              <img src="{{ url('slider/' . $infoweb->slider1) }}" alt="Slider Pertama" style="height: 40vh; width: 100%;">
             </div>
 
             <div class="item">
-              <img src="{{ url('slider/b.jpg') }}" alt="Slider Kedua" style="height: 40vh; width: 100%;">
+              <img src="{{ url('slider/' . $infoweb->slider2) }}" alt="Slider Kedua" style="height: 40vh; width: 100%;">
             </div>
 
             <div class="item">
-              <img src="{{ url('slider/c.jpeg') }}" alt="Slider Ketiga" style="height: 40vh; width: 100%;">
+              <img src="{{ url('slider/' . $infoweb->slider3) }}" alt="Slider Ketiga" style="height: 40vh; width: 100%;">
             </div>
           </div>
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use Alert;
+use App\Infoweb;
 
 trait AuthenticatesUsers
 {
@@ -18,7 +19,9 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        return view('auth.login');
+        $infoweb = Infoweb::first();
+
+        return view('auth.login', compact('infoweb'));
     }
 
     /**

@@ -60,9 +60,11 @@
 													<br> A/n : {{ $donation->atas_nama }}
 													<br> Bank : {{ $donation->bank }}
 												</b><br>
-												Terimakasih atas bantuan rakanda/ayunda, semoga menjadi berkah dan digantikan dengan yang lebih oleh Allah SWT. Jika berkenan, mohon konfirmasi via Whatsapp untuk pendataan komisariat kepada:
+												Terimakasih atas bantuan rakanda/ayunda, semoga menjadi berkah dan digantikan dengan yang lebih oleh Allah SWT. Jika berkenan, mohon konfirmasi melalui form berikut:
+												<br><a href="https://forms.gle/4gkYpFuuXM4MhqSN9" style="color: green;" target="_blank">Klik Disini</a> 
+												<br><br>atau via Whatsapp pihak komisariat Sains Teknologi ke:
 												<b><br> {{ $donation->no_wa }} ({{ $donation->nama_wa }})</b>
-												<br><a href="https://web.whatsapp.com/send?phone={{ $donation->no_wa }}&text=Assalamualaikum, saya ingin konfirmasi bahwa saya sudah TF kepada pihak komisariat sains teknologi, mohon dipergunakan untuk hal yang bermanfaat. Yakin Usaha Sampai." style="color: green;">Atau klik disini</a>
+												<br><a target="_blank" href="https://web.whatsapp.com/send?phone={{ $donation->no_wa }}&text=Assalamualaikum, saya ingin konfirmasi bahwa saya sudah TF kepada pihak komisariat sains teknologi, mohon dipergunakan untuk hal yang bermanfaat. Yakin Usaha Sampai." style="color: green;">Atau klik disini</a>
 												<br><br>
 												<b><i>Yakin Usaha Sampai!</i></b>
 											</p>
