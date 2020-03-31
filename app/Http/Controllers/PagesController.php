@@ -10,6 +10,7 @@ use App\Article;
 use App\Activity;
 use App\Organization;
 use View;
+use Auth;
 
 class BaseController extends Controller {
     public function __construct() {
@@ -27,25 +28,162 @@ class PagesController extends BaseController
 {
     public function home()
     {
-    	$me = \Auth::user();
+    	$me = Auth::user();
 
-    	if($me->sudahPelantikan == 1 || $me->roles[0]->name == 'kahmi' || $me->roles[0]->name == 'admin') {
-        $hotNews = News::orderBy('created_at', 'desc')->take(4)->get();
-        $popularNews = News::whereNotIn('id', $hotNews->pluck('id'))->take(6)->get();
-        $articles = Article::orderBy('created_at', 'desc')->take(7)->get();
-        $activities = Activity::orderBy('created_at', 'desc')->take(8)->get();
+		if($me->sudahPelantikan == 1 || $me->roles[0]->name == 'kahmi' || $me->roles[0]->name == 'admin') {
+			$hotNews = News::orderBy('created_at', 'desc')->take(4)->get();
+			$popularNews = News::whereNotIn('id', $hotNews->pluck('id'))->take(6)->get();
+			$articles = Article::orderBy('created_at', 'desc')->take(7)->get();
+			$activities = Activity::orderBy('created_at', 'desc')->take(8)->get();
 
-        return view('pages.home', compact('hotNews', 'popularNews', 'articles', 'activities'));
-      }else{
-        return view('pages.mustLK');
-      }
+			return view('pages.home', compact('hotNews', 'popularNews', 'articles', 'activities'));
+		}else{
+			return view('pages.mustLK');
+		}
     }
 
     public function profile()
     {
-    	$me = \Auth::user();
+    	$me = Auth::user();
 
-    	return view('pages.users.profile', compact('me'));
+    	if ($me->roles[0]->name == 'kahmi')
+    		return view('pages.users.profile-kahmi', compact('me'));
+    	else
+    		return view('pages.users.profile', compact('me'));
+    }
+
+    public function profileUpdateKahmi(Request $request)
+    {
+        $input = $request->all();
+
+        $me = Auth::user();
+
+        if (isset($input['photo-profile'])) {
+            $namaThumbnail = str_random().'.'.$input['photo-profile']->getClientOriginalExtension();
+            
+            if (isset($me->photoprofile)) {
+                unlink(public_path('photo-profile/'.$me->photoprofile));
+            }
+            
+            $me->update([
+	            'name' => $request->name,
+	            'email' => $request->email,
+	            'phone' => $request->phone,
+	            'tempat' => $request->birthplace,
+	            'tanggalLahir' => $request->birthday,
+	            'jk' => $request->jk,
+	            'photoprofile' => $namaThumbnail,
+	            'alamatSekarang' => $request->address,
+	            'formals' => $request->formals,
+	            'trainings' => $request->trainings,
+	            'organizations' => $request->organizations,
+	            'jobs' => $request->jobs
+	        ]);
+
+            $input['photo-profile']->move(public_path("photo-profile/"), $namaThumbnail); 
+        }else{
+        	$me->update([
+	            'name' => $request->name,
+	            'email' => $request->email,
+	            'phone' => $request->phone,
+	            'tempat' => $request->birthplace,
+	            'tanggalLahir' => $request->birthday,
+	            'jk' => $request->jk,
+	            'alamatSekarang' => $request->address,
+	            'formals' => $request->formals,
+	            'trainings' => $request->trainings,
+	            'organizations' => $request->organizations,
+	            'jobs' => $request->jobs
+	        ]);
+        }
+        alert()->success('Pembaharuan Profil Berhasil !', '...');
+
+        return redirect('/profile')->with('success', 'Pembaharuan Profil Berhasil');
+    }
+
+    public function profileUpdateKader(Request $request)
+    {
+    	$input = $request->all();
+
+        $me = Auth::user();
+
+        if (isset($input['photo-profile'])) {
+            $namaThumbnail = str_random().'.'.$input['photo-profile']->getClientOriginalExtension();
+            
+            if (isset($me->photoprofile)) {
+                unlink(public_path('photo-profile/'.$me->photoprofile));
+            }
+            
+            $me->update([
+	            'name' => $input['name'],
+	            'email' => $input['email'],
+	            'status' => $input['status'],
+	            'jk' => $input['jk'],
+	            'username' => $input['username'],
+	            'phone' => $input['phone'],
+	            'alamatAsal' => $input['alamatAsal'],
+	            'alamatSekarang' => $input['alamatSekarang'],
+	            'tempat' => $input['tempat'],
+	            'tanggalLahir' => $input['tanggalLahir'],
+	            'jurusan' => $input['jurusan'],
+	            'angkatan' => $input['angkatan'],
+	            'sma' => $input['sma'],
+	            'lulusSma' => $input['lulusSma'],
+	            'smp' => $input['smp'],
+	            'lulusSmp' => $input['lulusSmp'],
+	            'sd' => $input['sd'],
+	            'lulusSd' => $input['lulusSd'],
+	            'organisasiSma' => $input['organisasiSma'],
+	            'organisasiKuliah' => $input['organisasiKuliah'],
+	            'organisasiLainnya' => $input['organisasiLainnya'],
+	            'penyakit' => $input['penyakit'],
+	            'hobby' => $input['hobby'],
+	            'keahlian' => $input['keahlian'],
+	            'bahasa' => $input['bahasa'],
+	            'namaAyah' => $input['namaAyah'],
+	            'namaIbu' => $input['namaIbu'],
+	            'jumlahSaudara' => $input['jumlahSaudara'],
+	            'anakKeberapa' => $input['anakKeberapa'],
+	            'photoprofile' => $namaThumbnail
+	        ]);
+
+            $input['photo-profile']->move(public_path("photo-profile/"), $namaThumbnail); 
+        }else{
+        	$me->update([
+	            'name' => $input['name'],
+	            'email' => $input['email'],
+	            'status' => $input['status'],
+	            'jk' => $input['jk'],
+	            'username' => $input['username'],
+	            'phone' => $input['phone'],
+	            'alamatAsal' => $input['alamatAsal'],
+	            'alamatSekarang' => $input['alamatSekarang'],
+	            'tempat' => $input['tempat'],
+	            'tanggalLahir' => $input['tanggalLahir'],
+	            'jurusan' => $input['jurusan'],
+	            'angkatan' => $input['angkatan'],
+	            'sma' => $input['sma'],
+	            'lulusSma' => $input['lulusSma'],
+	            'smp' => $input['smp'],
+	            'lulusSmp' => $input['lulusSmp'],
+	            'sd' => $input['sd'],
+	            'lulusSd' => $input['lulusSd'],
+	            'organisasiSma' => $input['organisasiSma'],
+	            'organisasiKuliah' => $input['organisasiKuliah'],
+	            'organisasiLainnya' => $input['organisasiLainnya'],
+	            'penyakit' => $input['penyakit'],
+	            'hobby' => $input['hobby'],
+	            'keahlian' => $input['keahlian'],
+	            'bahasa' => $input['bahasa'],
+	            'namaAyah' => $input['namaAyah'],
+	            'namaIbu' => $input['namaIbu'],
+	            'jumlahSaudara' => $input['jumlahSaudara'],
+	            'anakKeberapa' => $input['anakKeberapa']
+	        ]);
+        }
+        alert()->success('Pembaharuan Profil Berhasil !', '...');
+
+        return redirect('/profile')->with('success', 'Pembaharuan Profil Berhasil');
     }
 
     public function organizations()
@@ -57,7 +195,9 @@ class PagesController extends BaseController
 
     public function activities()
     {
-    	return view('pages.activities');
+    	$opinions = Activity::orderBy('created_at', 'desc')->paginate(8);
+
+    	return view('pages.activities', compact('opinions'));
     }
 
     public function newsSchedule()
@@ -92,5 +232,21 @@ class PagesController extends BaseController
     	$newsSchedules = News::where('publish_status', 1)->orderBy('updated_at', 'desc')->take(3)->get();
 
     	return view('pages.articles.show', compact('article', 'otherArticles', 'newsSchedules'));
+    }
+
+    public function storeOpinion(Request $request)
+    {
+    	$input = $request->all();
+
+        Activity::create([
+            'like' => 0,
+            'description' => $input['description'],
+            'dislike' => 0,
+            'user_id' => Auth::user()->id
+        ]);
+
+        alert()->success('Opini Berhasil Dikirim !', '...');
+
+        return back();
     }
 }

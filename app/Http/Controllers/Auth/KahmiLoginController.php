@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Alert;
 
 class KahmiLoginController extends Controller
 {
@@ -36,7 +37,7 @@ class KahmiLoginController extends Controller
             'tempat' => $request->birthplace,
             'tanggalLahir' => $request->birthday,
             'jk' => $request->jk,
-            'kahmi' => 1,
+            'photo-profile' => null,
             'alamatSekarang' => $request->address,
             'formals' => $request->formals,
             'trainings' => $request->trainings,
@@ -46,6 +47,8 @@ class KahmiLoginController extends Controller
 
         $user->attachRole(3);
 
-        return redirect('/')->with('success','Registration Success');
+        Alert::success('Berhasil', 'Terimakasih Sudah Registrasi');
+
+        return redirect('/')->with('success','Registrasi Berhasil');
     }
 }

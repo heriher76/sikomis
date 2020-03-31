@@ -16,7 +16,7 @@ class NewsScheduleController extends Controller
      */
     public function index()
     {
-        $newsNews = News::all();
+        $newsNews = News::orderBy('created_at', 'desc')->get();
 
         return view('admin.news-schedule.index', compact('newsNews'));
     }

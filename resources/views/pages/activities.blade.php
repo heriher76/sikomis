@@ -6,60 +6,25 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
 	<center><h2>Kolom Opini</h2></center>
 	<hr>
+	<p>Apa yang anda pikirkan?</p>
+	<center>
+		<form action="{{ url('send-opinion') }}" method="POST">
+			{{ csrf_field() }}
+			<textarea class="form-control" name="description" placeholder=". . . ."></textarea>
+			<button type="submit" class="btn btn-success">Kirim</button>
+		</form>
+	</center>
+	<br>
 	<section id="pinBoot">
-
+	  @foreach($opinions as $opinion)
 	  <article class="white-panel">
-	    <h4><a href="#">Title 1</a></h4>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-	      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	    <label><a href="#">oleh: {{ $opinion->user->name }}</a></label>
+	    <p>{!! $opinion->description !!}</p>
 	  </article>
-
-	  <article class="white-panel">
-	    <h4><a href="#">Title 2</a></h4>
-	    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	  </article>
-
-	  <article class="white-panel">
-	    <h4><a href="#">Title 3</a></h4>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-	      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-	  </article>
-
-
-	  <article class="white-panel">
-	    <h4><a href="#">Title 4</a></h4>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-	      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	  </article>
-
-	  <article class="white-panel">
-	    <h4><a href="#">Title 5</a></h4>
-	    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	  </article>
-
-	  <article class="white-panel">
-	    <h4><a href="#">Title 6</a></h4>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-	      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-	  </article>
-
-
-
-	  <article class="white-panel">
-	    <h4><a href="#">Title 7</a></h4>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-	      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	  </article>
-
-	  <article class="white-panel">
-	    <h4><a href="#">Title 8</a></h4>
-	    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	  </article>
-
+	  @endforeach
 	</section>
-
-	<hr>
-
+	<br>
+	<center>{{ $opinions->links() }}</center>
 	</div>
 </div>
 @stop
@@ -262,4 +227,8 @@
 
 	})(jQuery, window, document);
 </script>
+@stop
+
+@section('sweet-alert')
+  @include('sweetalert::alert')
 @stop

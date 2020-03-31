@@ -17,7 +17,7 @@ class AddLkKahmiColumnToUserTable extends Migration
           $table->boolean('sudahLK')->nullable();
           $table->boolean('sudahUpgrading')->nullable();
           $table->boolean('sudahPelantikan')->nullable();
-          $table->integer('kahmi')->nullable();
+          $table->string('photoprofile')->nullable();
         });
     }
 
@@ -32,7 +32,7 @@ class AddLkKahmiColumnToUserTable extends Migration
           $table->dropColumn('sudahLK');
           $table->dropColumn('sudahUpgrading');
           $table->dropColumn('sudahPelantikan');
-          $table->dropColumn('kahmi');
+          $table->dropColumn('photoprofile');
         });
     }
 }

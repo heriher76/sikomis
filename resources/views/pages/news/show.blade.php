@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('title')
+	SIKOMIS | {{ $news->title }}
+@stop
+
 @section('contents')
 <div class="col-md-4 sidebar" id="sidebar">
 	<aside>

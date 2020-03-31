@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'status', 'jk', 'username','phone','alamatAsal','alamatSekarang','tempat','tanggalLahir','jurusan','angkatan','sma','lulusSma','smp','lulusSmp','sd','lulusSd','organisasiSma','organisasiKuliah','organisasiLainnya','penyakit','hobby','keahlian','bahasa','namaAyah','namaIbu','jumlahSaudara','anakKeberapa','harapan','alasan','sudahLK','sudahUpgrading','sudahPelantikan','kahmi','formals','trainings','organizations','jobs'
+        'name', 'email', 'password', 'status', 'jk', 'username','phone','alamatAsal','alamatSekarang','tempat','tanggalLahir','jurusan','angkatan','sma','lulusSma','smp','lulusSmp','sd','lulusSd','organisasiSma','organisasiKuliah','organisasiLainnya','penyakit','hobby','keahlian','bahasa','namaAyah','namaIbu','jumlahSaudara','anakKeberapa','harapan','alasan','sudahLK','sudahUpgrading','sudahPelantikan','photoprofile','formals','trainings','organizations','jobs'
     ];
 
     /**

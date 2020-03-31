@@ -16,7 +16,7 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        $activities = Activity::all();
+        $activities = Activity::orderBy('created_at', 'desc')->get();
 
         return view('admin.activity.index', compact('activities'));
     }

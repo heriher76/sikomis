@@ -22,6 +22,9 @@
 				<li><a href="javascript:void(0);" onclick="return alert('Coming Soon');">Karir</a></li>
 				<li class="dropdown magz-dropdown" ><a href="#">{{ \Auth::user()->name }} <i class="ion-ios-arrow-right"></i></a>
 					<ul class="dropdown-menu">
+						@if(\Auth::user()->roles[0]->name == 'admin')
+						<li><a href="{{ url('admin') }}"><i class="icon ion-key"></i> Admin Dashboard</a></li>
+						@endif
 						<li><a href="{{ url('profile') }}"><i class="icon ion-person"></i> Profile</a></li>
 						<li>
                             <a href="{{ route('logout') }}"

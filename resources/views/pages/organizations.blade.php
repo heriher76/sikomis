@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', 'Kabinet | SIKOMIS')
+
 @section('contents')
 <div class="col-md-12">
 	<article class="article main-article">

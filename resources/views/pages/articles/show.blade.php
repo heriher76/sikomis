@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('title')
+	SIKOMIS | {{ $article->title }}
+@stop
+
 @section('contents')
 <div class="col-md-8">
 	<ol class="breadcrumb">

@@ -27,6 +27,7 @@
 	</head>
 
 	<body class="skin-orange">
+		@yield('sweet-alert')
 		<header class="primary">
 			<div class="firstbar">
 				<div class="container">
