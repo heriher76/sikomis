@@ -46,21 +46,24 @@
         <article class="col-md-12 article-list">
             <div class="inner">
                 <figure>
-                    <a href="single.html">
+                    <a href="{{ url($itemNews->slug) }}">
                         <img src="{{ url('news-thumbnail/'.$itemNews->thumbnail) }}" alt="News and Schedule">
                     </a>
                 </figure>
                 <div class="details">
                     <div class="detail">
+                        <div class="category">
+                          <a href="javascript:void():">{{ $itemNews->user->name }}</a>
+                        </div>
                         <div class="time">{{ $itemNews->updated_at }}</div>
                     </div>
-                    <h1><a href="single.html">Donec consequat arcu at ultrices sodales quam erat aliquet diam</a></h1>
+                    <h1><a href="{{ url($itemNews->slug) }}">{{ $itemNews->title }}</a></h1>
                     <p>
                     {!! str_limit($itemNews->description, $limit = 150, $end = '...') !!}
                     </p>
                     <footer>
-                        <a class="btn btn-primary more" href="{{ url('news-schedule/'.$itemNews->slug) }}">
-                            <div>More</div>
+                        <a class="btn btn-primary more" href="{{ url($itemNews->slug) }}">
+                            <div>Lanjut Baca</div>
                             <div><i class="ion-ios-arrow-thin-right"></i></div>
                         </a>
                     </footer>
@@ -79,12 +82,12 @@
             <article class="article-mini">
                 <div class="inner">
                     <figure>
-                        <a href="{{ url('news-schedule/'.$popular->slug) }}">
+                        <a href="{{ url($popular->slug) }}">
                             <img src="{{ url('news-thumbnail/'.$popular->thumbnail) }}" alt="Popular News">
                         </a>
                     </figure>
                     <div class="padding">
-                        <h1><a href="{{ url('news-schedule/'.$popular->slug) }}">{{ $popular->title }}</a></h1>
+                        <h1><a href="{{ url($popular->slug) }}">{{ $popular->title }}</a></h1>
                     </div>
                 </div>
             </article>

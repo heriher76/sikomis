@@ -11,12 +11,12 @@
     <article class="article-fw">
       <div class="inner">
         <figure>
-            <a href="{{ url('/articles/'.$news->slug) }}">
+            <a href="{{ url($news->slug) }}">
               <img src="{{ url('news-thumbnail/'.$news->thumbnail) }}">
             </a>
         </figure>
         <div class="details">
-          <h1><a href="{{ url('/articles/'.$news->slug) }}">{{ $news->title }}</a></h1>
+          <h1><a href="{{ url($news->slug) }}">{{ $news->title }}</a></h1>
           <p>
             {!! str_limit($news->description, $limit = 150, $end = '...') !!}
           </p>
