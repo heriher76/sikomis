@@ -40,7 +40,7 @@
 								</a>
 							</div>
 						</div>
-						<div style="position: absolute;">
+						<div style="position: absolute; top: 0;">
 							<ul class="nav-icons">
 								<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="ion-person-add"></i><div>Donasi Ke Komisariat? Klik</div></a></li>
 							</ul>
@@ -62,8 +62,8 @@
 													<br> Bank : {{ $donation->bank }}
 												</b><br>
 												Terimakasih atas bantuan rakanda/ayunda, semoga menjadi berkah dan digantikan dengan yang lebih oleh Allah SWT. Jika berkenan, mohon konfirmasi melalui form berikut:
-												<br><a href="https://forms.gle/4gkYpFuuXM4MhqSN9" style="color: green;" target="_blank">Klik Disini</a> 
-												<br><br>atau via Whatsapp pihak komisariat Sains Teknologi ke:
+												<br><a href="https://forms.gle/4gkYpFuuXM4MhqSN9" style="color: green;" target="_blank">Klik Disini</a>
+												<br><br>atau via Whatsapp pihak komisariat Sains & Teknologi ke:
 												<b><br> {{ $donation->no_wa }} ({{ $donation->nama_wa }})</b>
 												<br><a target="_blank" href="https://web.whatsapp.com/send?phone={{ $donation->no_wa }}&text=Assalamualaikum, saya ingin konfirmasi bahwa saya sudah TF kepada pihak komisariat sains teknologi, mohon dipergunakan untuk hal yang bermanfaat. Yakin Usaha Sampai." style="color: green;">Atau klik disini</a>
 												<br><br>
@@ -78,6 +78,44 @@
 							  </div>
 							</div>
 						</div>
+
+						<div style="position: absolute; float: right; top: 0; right: 100px;">
+							<ul class="nav-icons">
+								@guest
+								<li><a href="{{ url('login') }}"><i class="ion-log-in"></i><div>Login / Register</div></a></li>
+								@else
+								<li class="dropdown">
+										@if(Auth::user()->photoprofile == null)
+										<img src="{{ url('photo-profile/default.jpg') }}" alt="default photo" style="width: 50px; height: 50px; border-radius: 50%;">
+										@else
+										<img src="{{ url('photo-profile/'.Auth::user()->photoprofile) }}" alt="default photo" style="width: 50px; height: 50px; border-radius: 50%;">
+										@endif
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                        <div>{{ Auth::user()->name }}</div> <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu">
+												@if(\Auth::user()->roles[0]->name == 'admin')
+												<li><a href="{{ url('admin') }}"> Admin Dashboard</a></li>
+												@endif
+												<li><a href="{{ url('profile') }}"> Profil Saya</a></li>
+                        <li>
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+								@endguest
+							</ul>
+						</div>
+
 					</div>
 				</div>
 			</div>

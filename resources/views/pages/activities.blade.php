@@ -5,6 +5,8 @@
 @section('contents')
 <div class="col-md-12 col-sm-12 col-xs-12">
 	<center><h2>Kolom Opini</h2></center>
+	@guest
+	@else
 	<hr>
 	<p>Apa yang anda pikirkan?</p>
 	<center>
@@ -15,6 +17,7 @@
 		</form>
 	</center>
 	<br>
+	@endguest
 	<section id="pinBoot">
 	  @foreach($opinions as $opinion)
 	  <article class="white-panel">

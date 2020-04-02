@@ -47,21 +47,21 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 });
 
 Route::group(['middleware' => ['auth']], function () {
-	Route::get('/', 'PagesController@home');
-
 	Route::get('/profile', 'PagesController@profile');
 	Route::put('/profile/update-kahmi', 'PagesController@profileUpdateKahmi');
 	Route::put('/profile/update-kader', 'PagesController@profileUpdateKader');
 
-	Route::get('/organizations', 'PagesController@organizations');
-	Route::get('/news', 'PagesController@news');
-	Route::get('/activities', 'PagesController@activities');
-
-	Route::get('/articles', 'PagesController@articles');
-	Route::get('/articles/{slug}', 'PagesController@showArticle');
-
-	Route::get('/news-schedule', 'PagesController@newsSchedule');
-	Route::get('/{slug}', 'PagesController@showNewsSchedule');
-
 	Route::post('/send-opinion', 'PagesController@storeOpinion');
 });
+
+// PUBLIC
+Route::get('/', 'PagesController@home');
+Route::get('/organizations', 'PagesController@organizations');
+Route::get('/news', 'PagesController@news');
+Route::get('/activities', 'PagesController@activities');
+
+Route::get('/articles', 'PagesController@articles');
+Route::get('/articles/{slug}', 'PagesController@showArticle');
+
+Route::get('/news-schedule', 'PagesController@newsSchedule');
+Route::get('/{slug}', 'PagesController@showNewsSchedule');

@@ -30,18 +30,18 @@ class PagesController extends BaseController
     {
     	$me = Auth::user();
 
-		if($me->sudahPelantikan == 1 || $me->roles[0]->name == 'kahmi' || $me->roles[0]->name == 'admin') {
-			$hotNews = News::orderBy('created_at', 'desc')->take(4)->get();
-			$popularNews = News::whereNotIn('id', $hotNews->pluck('id'))->take(6)->get();
-			$articles = Article::orderBy('created_at', 'desc')->take(7)->get();
-			$activities = Activity::orderBy('created_at', 'desc')->take(8)->get();
+  		if(!$me || $me->sudahPelantikan == 1 || $me->roles[0]->name == 'kahmi' || $me->roles[0]->name == 'admin') {
+  			$hotNews = News::orderBy('created_at', 'desc')->take(4)->get();
+  			$popularNews = News::whereNotIn('id', $hotNews->pluck('id'))->take(6)->get();
+  			$articles = Article::orderBy('created_at', 'desc')->take(7)->get();
+  			$activities = Activity::orderBy('created_at', 'desc')->take(8)->get();
 
-			return view('pages.home', compact('hotNews', 'popularNews', 'articles', 'activities'));
-		}else{
-			$infoweb = Infoweb::first();
+  			return view('pages.home', compact('hotNews', 'popularNews', 'articles', 'activities'));
+  		}else{
+  			$infoweb = Infoweb::first();
 
-			return view('pages.mustLK', compact('infoweb'));
-		}
+  			return view('pages.mustLK', compact('infoweb'));
+  		}
     }
 
     public function profile()
@@ -62,11 +62,11 @@ class PagesController extends BaseController
 
         if (isset($input['photo-profile'])) {
             $namaThumbnail = str_random().'.'.$input['photo-profile']->getClientOriginalExtension();
-            
+
             if (isset($me->photoprofile)) {
                 unlink(public_path('photo-profile/'.$me->photoprofile));
             }
-            
+
             $me->update([
 	            'name' => $request->name,
 	            'email' => $request->email,
@@ -82,7 +82,7 @@ class PagesController extends BaseController
 	            'jobs' => $request->jobs
 	        ]);
 
-            $input['photo-profile']->move(public_path("photo-profile/"), $namaThumbnail); 
+            $input['photo-profile']->move(public_path("photo-profile/"), $namaThumbnail);
         }else{
         	$me->update([
 	            'name' => $request->name,
@@ -111,11 +111,11 @@ class PagesController extends BaseController
 
         if (isset($input['photo-profile'])) {
             $namaThumbnail = str_random().'.'.$input['photo-profile']->getClientOriginalExtension();
-            
+
             if (isset($me->photoprofile)) {
                 unlink(public_path('photo-profile/'.$me->photoprofile));
             }
-            
+
             $me->update([
 	            'name' => $input['name'],
 	            'email' => $input['email'],
@@ -149,7 +149,7 @@ class PagesController extends BaseController
 	            'photoprofile' => $namaThumbnail
 	        ]);
 
-            $input['photo-profile']->move(public_path("photo-profile/"), $namaThumbnail); 
+            $input['photo-profile']->move(public_path("photo-profile/"), $namaThumbnail);
         }else{
         	$me->update([
 	            'name' => $input['name'],

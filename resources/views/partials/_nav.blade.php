@@ -20,7 +20,9 @@
 				<li><a href="{{ url('activities') }}">Aktifitas</a></li>
 				<li><a href="javascript:void(0);" onclick="return alert('Coming Soon');">KomiShop</a></li>
 				<li><a href="javascript:void(0);" onclick="return alert('Coming Soon');">Karir</a></li>
-				<li class="dropdown magz-dropdown" ><a href="#">{{ \Auth::user()->name }} <i class="ion-ios-arrow-right"></i></a>
+				@guest
+				@else
+				<li class="dropdown magz-dropdown visible-xs" style="display: none;"><a href="#">{{ \Auth::user()->name }} <i class="ion-ios-arrow-right"></i></a>
 					<ul class="dropdown-menu">
 						@if(\Auth::user()->roles[0]->name == 'admin')
 						<li><a href="{{ url('admin') }}"><i class="icon ion-key"></i> Admin Dashboard</a></li>
@@ -40,8 +42,9 @@
                         </li>
 					</ul>
 				</li>
+				@endguest
 				<hr></hr>
-				<li class="visible-xs visible-sm" style="display: none;"><a href="#" data-toggle="modal" data-target="#myModal"><div>Donasi Ke Komisariat? Klik</div></a></li>
+				<li class="visible-xs" style="display: none;"><a href="#" data-toggle="modal" data-target="#myModal"><div>Donasi Ke Komisariat? Klik</div></a></li>
 				<!-- Modal -->
 				<div id="myModal" class="modal fade" role="dialog">
 					<div class="modal-dialog">
@@ -60,8 +63,8 @@
 										<br> Bank : {{ $donation->bank }}
 									</b><br>
 									Terimakasih atas bantuan rakanda/ayunda, semoga menjadi berkah dan digantikan dengan yang lebih oleh Allah SWT. Jika berkenan, mohon konfirmasi melalui form berikut:
-									<br><a href="https://forms.gle/4gkYpFuuXM4MhqSN9" style="color: green;" target="_blank">Klik Disini</a> 
-									<br><br>atau via Whatsapp pihak komisariat Sains Teknologi ke:
+									<br><a href="https://forms.gle/4gkYpFuuXM4MhqSN9" style="color: green;" target="_blank">Klik Disini</a>
+									<br><br>atau via Whatsapp pihak komisariat Sains & Teknologi ke:
 									<b><br> {{ $donation->no_wa }} ({{ $donation->nama_wa }})</b>
 									<br><a target="_blank" href="https://web.whatsapp.com/send?phone={{ $donation->no_wa }}&text=Assalamualaikum, saya ingin konfirmasi bahwa saya sudah TF kepada pihak komisariat sains teknologi, mohon dipergunakan untuk hal yang bermanfaat. Yakin Usaha Sampai." style="color: green;">Atau klik disini</a>
 									<br><br>
