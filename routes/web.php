@@ -52,6 +52,11 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::put('/profile/update-kader', 'PagesController@profileUpdateKader');
 
 	Route::post('/send-opinion', 'PagesController@storeOpinion');
+
+	Route::get('/notif', function() {
+	    $user = \App\User::where('email', 'herhermawan007@gmail.com')->first();
+	    $user->notify(new \App\Notifications\News);
+	});
 });
 
 // PUBLIC
