@@ -5,22 +5,24 @@
 @section('contents')
 <div class="col-md-12 col-sm-12 col-xs-12">
 	<center><h2>Kolom Opini</h2></center>
-	@if(Auth::user()->sudahPelantikan == 1 || Auth::user()->roles[0]->name == 'kahmi' || Auth::user()->roles[0]->name == 'admin')
-	<hr>
-	<p>Apa yang anda pikirkan?</p>
-	<center>
-		<form action="{{ url('send-opinion') }}" method="POST">
-			{{ csrf_field() }}
-			<textarea class="form-control" name="description" placeholder=". . . ."></textarea>
-			<button type="submit" class="btn btn-success">Kirim</button>
-		</form>
-	</center>
-	<br>
+	@if(Auth::user())
+		@if(Auth::user()->sudahPelantikan == 1 || Auth::user()->roles[0]->name == 'kahmi' || Auth::user()->roles[0]->name == 'admin')
+		<hr>
+		<p>Apa yang anda pikirkan?</p>
+		<center>
+			<form action="{{ url('send-opinion') }}" method="POST">
+				{{ csrf_field() }}
+				<textarea class="form-control" name="description" placeholder=". . . ."></textarea>
+				<button type="submit" class="btn btn-success">Kirim</button>
+			</form>
+		</center>
+		<br>
+		@endif
 	@endif
 	<section id="pinBoot">
 	  @foreach($opinions as $opinion)
 	  <article class="white-panel">
-	    <label><a href="#">oleh: {{ $opinion->user->name }}</a></label>
+	    <label><a href="#">{{ $opinion->user->name }}</a></label>
 	    <p>{!! $opinion->description !!}</p>
 	  </article>
 	  @endforeach
