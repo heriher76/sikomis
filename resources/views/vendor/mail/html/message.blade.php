@@ -1,7 +1,7 @@
 @component('mail::layout')
     {{-- Header --}}
     @slot('header')
-        @component('mail::header', ['url' => 'hmi-saintek.com'])
+        @component('mail::header', ['url' => url('/')])
             SIKOMIS | HMI Komisariat Sains & Teknologi
         @endcomponent
     @endslot

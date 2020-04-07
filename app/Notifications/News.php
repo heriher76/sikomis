@@ -46,7 +46,7 @@ class News extends Notification
     {
         return (new MailMessage)
             ->markdown('vendor.notifications.email', ['item' => $this->item, 'type' => $this->type])
-            ->subject('HMI Saintek | SIKOMIS')
+            ->subject('❤ Kabar HMI Saintek Nih! ❤')
             ->from('humas@hmi-saintek.com', 'HMI Saintek | SIKOMIS')        
             ->line('HMI Komisariat Sains & Teknologi ada yang baru lagi nih! Semoga Rakanda dan Ayunda semuanya senang bisa membaca ini! Langsung cek ke official website HMI Komisariat Sains & Teknologi Ya! Saintek Go 4.0!')
             ->action('Klik Disini Untuk Membaca', url('/'.$this->item->slug))
