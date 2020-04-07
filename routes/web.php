@@ -44,6 +44,36 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
 	Route::get('/admin/web-settings', 'Admin\WebSettingController@index');
 	Route::put('/admin/web-settings/update', 'Admin\WebSettingController@update');
+
+	Route::get('/admin/send-news-notif/{id}', function($id) {
+	    $kahmis = \App\Role::where('name', 'kahmi')->first()->users()->get();
+	    $kaders = \App\User::where('sudahPelantikan', 1)->get();
+	    $news = \App\News::where('id', $id)->first();
+
+	    foreach ($kahmis as $key => $kahmi) {
+	    	$kahmi->notify(new \App\Notifications\News($news, 'news'));
+	    }
+	    foreach ($kaders as $key => $kader) {
+	    	$kader->notify(new \App\Notifications\News($news, 'news'));
+	    }
+
+	    return back();
+	});
+
+	Route::get('/admin/send-article-notif/{id}', function($id) {
+	    $kahmis = \App\Role::where('name', 'kahmi')->first()->users()->get();
+	    $kaders = \App\User::where('sudahPelantikan', 1)->get();
+	    $article = \App\Article::where('id', $id)->first();
+
+	    foreach ($kahmis as $key => $kahmi) {
+	    	$kahmi->notify(new \App\Notifications\News($article, 'article'));
+	    }
+	    foreach ($kaders as $key => $kader) {
+	    	$kader->notify(new \App\Notifications\News($article, 'article'));
+	    }
+
+	    return back();
+	});
 });
 
 Route::group(['middleware' => ['auth']], function () {
@@ -52,11 +82,6 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::put('/profile/update-kader', 'PagesController@profileUpdateKader');
 
 	Route::post('/send-opinion', 'PagesController@storeOpinion');
-
-	Route::get('/notif', function() {
-	    $user = \App\User::where('email', 'herhermawan007@gmail.com')->first();
-	    $user->notify(new \App\Notifications\News);
-	});
 });
 
 // PUBLIC

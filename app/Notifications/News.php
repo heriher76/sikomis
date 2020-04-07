@@ -10,15 +10,19 @@ use Illuminate\Notifications\Messages\MailMessage;
 class News extends Notification
 {
     use Queueable;
+    
+    public $item;
+    public $type;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($item, $type)
     {
-        //
+        $this->item = $item;
+        $this->type = $type;
     }
 
     /**
@@ -41,10 +45,11 @@ class News extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->from('admin@hmi-saintek.com')
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+            ->markdown('vendor.notifications.email', ['item' => $this->item, 'type' => $this->type])
+            ->from('humas@hmi-saintek.com')        
+            ->line('HMI Komisariat Sains & Teknologi ada yang baru lagi nih! Semoga Rakanda dan Ayunda semuanya senang bisa membaca ini! Langsung cek ke official website HMI Komisariat Sains & Teknologi Ya! Saintek Go 4.0!')
+            ->action('Klik Disini Untuk Membaca', url('/'.$this->item->slug))
+            ->line('YAKIN USAHA SAMPAI!');
     }
 
     /**

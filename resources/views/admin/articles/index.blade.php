@@ -33,6 +33,7 @@
                                     <td>{{ $article->user->name }}</td>
                                     <td>{{ $article->created_at }}</td>
                                     <td>
+                                        <a href="{{ url('admin/send-article-notif/'.$article->id) }}" class="btn btn-warning btn-xs waves-effect">Notif</a>
                                         <a href="{{ url('admin/articles/'.$article->slug.'/edit') }}" class="btn btn-success btn-xs waves-effect">Edit</a>
                                         <form action="{{ url('admin/articles/'.$article->id) }}" method="POST" style="display: inline;">
                                             {{ csrf_field() }}

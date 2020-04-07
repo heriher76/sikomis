@@ -33,6 +33,7 @@
                                     <td>{{ $berita->user->name }}</td>
                                     <td>{{ $berita->created_at }}</td>
                                     <td>
+                                        <a href="{{ url('admin/send-news-notif/'.$berita->id) }}" class="btn btn-warning btn-xs waves-effect">Notif</a>
                                         <a href="{{ url('admin/news-schedules/'.$berita->slug.'/edit') }}" class="btn btn-success btn-xs waves-effect">Edit</a>
                                         <form action="{{ url('admin/news-schedules/'.$berita->id) }}" method="POST" style="display: inline;">
                                             {{ csrf_field() }}
