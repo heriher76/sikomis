@@ -45,7 +45,7 @@
 								<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="ion-person-add"></i><div>Donasi Ke Komisariat? Klik</div></a></li>
 							</ul>
 							<!-- Modal -->
-							<div id="myModal" class="modal fade" role="dialog">
+							<div id="myModal" class="modal fade" role="dialog" style="z-index: 9999999999999999 !important;">
 							  <div class="modal-dialog">
 
 							    <!-- Modal content-->

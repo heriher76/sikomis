@@ -39,7 +39,7 @@
     <h5 style="margin-left: 10px;"><i class="ion-edit"> </i>Ingin Buat Artikel? <a href="#" data-toggle="modal" data-target="#createArticle" style="color: green;">Klik Disini</a></h5>
     <hr>
     <!-- Modal -->
-      <div id="createArticle" class="modal fade" role="dialog" style="position: absolute;">
+      <div id="createArticle" class="modal fade" role="dialog" style="z-index: 9999999999999999 !important;">
         <div class="modal-dialog">
 
           <!-- Modal content-->
