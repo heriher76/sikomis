@@ -21,7 +21,7 @@
 				<li><a href="javascript:void(0);" onclick="return alert('Coming Soon');">KomiShop</a></li>
 				<li><a href="javascript:void(0);" onclick="return alert('Coming Soon');">Karir</a></li>
 				@guest
-				<li><a href="{{ url('login') }}">Login / Register</a></li>
+				<li class="visible-xs" style="display: none;"><a href="{{ url('login') }}">Login / Register</a></li>
 				@else
 				<li class="dropdown magz-dropdown visible-xs" style="display: none;"><a href="#">{{ \Auth::user()->name }} <i class="ion-ios-arrow-right"></i></a>
 					<ul class="dropdown-menu">
