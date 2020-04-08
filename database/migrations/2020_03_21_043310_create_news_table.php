@@ -20,6 +20,7 @@ class CreateNewsTable extends Migration
             $table->string('thumbnail')->nullable();
             $table->string('slug')->nullable();
             $table->integer('publish_status')->nullable();
+            $table->boolean('highlighted')->nullable();
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

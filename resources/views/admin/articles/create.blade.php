@@ -25,7 +25,7 @@
 
                         <textarea name="description" class="form-control my-editor" form="willSubmit"></textarea>
 
-            						<h4>Thumbnail</h4>
+            						<h4>Thumbnail *Max size: 1 MB</h4>
             						<div class="row">
             							<div class="col-md-4">
             								<div class="form-group form-float">

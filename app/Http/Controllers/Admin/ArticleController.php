@@ -142,4 +142,19 @@ class ArticleController extends Controller
             'Admin\ArticleController@index'
         );
     }
+
+    public function publishArticle($id)
+    {
+        $article = Article::where('id', $id)->first();
+
+        $article->update([
+            'publish_status' => 1
+        ]);
+
+        alert()->success('Artikel Berhasil Dipublikasi !', '...');
+
+        return redirect()->action(
+            'Admin\ArticleController@index'
+        );
+    }
 }

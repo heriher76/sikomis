@@ -136,7 +136,37 @@ class NewsScheduleController extends Controller
         
         $News->destroy($id);
 
-        alert()->success('News Berhasil Dihapus !', '...');
+        alert()->success('Berita Berhasil Dihapus !', '...');
+
+        return redirect()->action(
+            'Admin\NewsScheduleController@index'
+        );
+    }
+
+    public function highlight($id)
+    {
+        $News = News::where('id', $id)->first();
+        
+        $News->update([
+            'highlighted' => 1
+        ]);
+
+        alert()->success('Highlight Berita Berhasil!', '...');
+
+        return redirect()->action(
+            'Admin\NewsScheduleController@index'
+        );
+    }
+
+    public function unhighlight($id)
+    {
+        $News = News::where('id', $id)->first();
+        
+        $News->update([
+            'highlighted' => null
+        ]);
+
+        alert()->success('Unhighlight Berita Berhasil!', '...');
 
         return redirect()->action(
             'Admin\NewsScheduleController@index'

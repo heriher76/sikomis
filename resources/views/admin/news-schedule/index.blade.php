@@ -21,6 +21,7 @@
                                     <th>Publish Status</th>
                                     <th>By</th>
                                     <th>Created At</th>
+                                    <th>Highlight</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -32,6 +33,13 @@
                                     <td>@php echo ($berita->publish_status == 1) ? 'Published' : 'Drafted'; @endphp</td>
                                     <td>{{ $berita->user->name }}</td>
                                     <td>{{ $berita->created_at }}</td>
+                                    <td>
+                                        @if($berita->highlighted == 1)
+                                        <a href="{{ url('admin/news-schedules/unhighlight/'.$berita->id) }}" class="btn btn-success btn-xs waves-effect">True</a>
+                                        @else
+                                        <a href="{{ url('admin/news-schedules/highlight/'.$berita->id) }}" class="btn btn-danger btn-xs waves-effect">False</a>
+                                        @endif
+                                    </td>
                                     <td>
                                         <a href="{{ url('admin/send-news-notif/'.$berita->id) }}" class="btn btn-warning btn-xs waves-effect">Notif</a>
                                         <a href="{{ url('admin/news-schedules/'.$berita->slug.'/edit') }}" class="btn btn-success btn-xs waves-effect">Edit</a>

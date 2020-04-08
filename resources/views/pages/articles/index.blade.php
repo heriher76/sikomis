@@ -34,6 +34,53 @@
 
 <div class="col-md-8 text-left">
 <div class="row">
+  @if(Auth::user())
+    @if(Auth::user()->sudahPelantikan == 1 || Auth::user()->roles[0]->name == 'kahmi' || Auth::user()->roles[0]->name == 'admin')
+    <h5 style="margin-left: 10px;"><i class="ion-edit"> </i>Ingin Buat Artikel? <a href="#" data-toggle="modal" data-target="#createArticle" style="color: green;">Klik Disini</a></h5>
+    <hr>
+    <!-- Modal -->
+      <div id="createArticle" class="modal fade" role="dialog" style="position: absolute;">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Buat Artikel</h4>
+            </div>
+            <div class="modal-body">
+              <form action="{{ url('send-article') }}" id="willSubmit" method="POST" enctype="multipart/form-data">
+              {{ csrf_field() }}
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <label class="form-label">Judul</label>
+                        <input type="text" name="title" class="form-control" form="willSubmit">
+                    </div>
+                </div>
+                <label>Deskripsi</label>
+                <textarea name="description" class="form-control my-editor" form="willSubmit"></textarea>
+                <br>
+                <label>Thumbnail *Max size: 1 MB</label>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group form-float">
+                        <input type="file" name="thumbnail" class="form-control" form="willSubmit">
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="slug" form="willSubmit">
+                <button type="submit" class="btn btn-primary m-t-15 waves-effect">Kirim</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    @endif
+  @endif
   @foreach($articles as $article)
   <article class="col-md-12 article-list">
     <div class="inner">
@@ -81,4 +128,51 @@
   </div>
 </div>
 </div>
+@stop
+
+@section('styles')
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+@endsection
+
+@section('scripts')
+<script>
+  var editor_config = {
+    path_absolute : "{{ url('/').'/' }}",
+    selector: "textarea.my-editor",
+    plugins: [
+      "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+      "searchreplace wordcount visualblocks visualchars code fullscreen",
+      "insertdatetime media nonbreaking save table contextmenu directionality",
+      "emoticons template paste textcolor colorpicker textpattern"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
+    relative_urls: false,
+    file_browser_callback : function(field_name, url, type, win) {
+      var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+      var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
+
+      var cmsURL = editor_config.path_absolute + 'laravel-filemanager?field_name=' + field_name;
+      if (type == 'image') {
+        cmsURL = cmsURL + "&type=Images";
+      } else {
+        cmsURL = cmsURL + "&type=Files";
+      }
+
+      tinyMCE.activeEditor.windowManager.open({
+        file : cmsURL,
+        title : 'Filemanager',
+        width : x * 0.8,
+        height : y * 0.8,
+        resizable : "yes",
+        close_previous : "no"
+      });
+    }
+  };
+
+  tinymce.init(editor_config);
+</script>
+@endsection
+
+@section('sweet-alert')
+  @include('sweetalert::alert')
 @stop

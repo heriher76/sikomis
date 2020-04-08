@@ -33,7 +33,12 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 	Route::get('/admin/verifikasi/pelantikan/{id}', 'Admin\VerifikasiController@verifPelantikan');
 
 	Route::resource('/admin/news-schedules', 'Admin\NewsScheduleController');
+	Route::get('/admin/news-schedules/highlight/{id}', 'Admin\NewsScheduleController@highlight');
+	Route::get('/admin/news-schedules/unhighlight/{id}', 'Admin\NewsScheduleController@unhighlight');
+
 	Route::resource('/admin/articles', 'Admin\ArticleController');
+	Route::get('/admin/articles/publish/{id}', 'Admin\ArticleController@publishArticle');
+	
 	Route::resource('/admin/activities', 'Admin\ActivityController');
 
 	Route::get('/admin/organizations', 'Admin\OrganizationController@index');
@@ -82,6 +87,7 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::put('/profile/update-kader', 'PagesController@profileUpdateKader');
 
 	Route::post('/send-opinion', 'PagesController@storeOpinion');
+	Route::post('/send-article', 'PagesController@storeArticle');
 });
 
 // PUBLIC

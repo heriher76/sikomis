@@ -35,8 +35,9 @@ class PagesController extends BaseController
   			$popularNews = News::whereNotIn('id', $hotNews->pluck('id'))->take(6)->get();
   			$articles = Article::orderBy('created_at', 'desc')->take(7)->get();
   			$activities = Activity::orderBy('created_at', 'desc')->take(8)->get();
+            $highlightSliders = News::where('highlighted', 1)->get();
 
-  			return view('pages.home', compact('hotNews', 'popularNews', 'articles', 'activities'));
+  			return view('pages.home', compact('hotNews', 'popularNews', 'articles', 'activities', 'highlightSliders'));
   		}else{
   			$infoweb = Infoweb::first();
 
@@ -248,6 +249,29 @@ class PagesController extends BaseController
         ]);
 
         alert()->success('Opini Berhasil Dikirim !', '...');
+
+        return back();
+    }
+
+    public function storeArticle(Request $request)
+    {
+        $input = $request->all();
+
+        ($input['slug']) ? $slug = $input['slug'] : $slug = str_slug($input['title'], '-');
+        (isset($input['thumbnail'])) ? $namaThumbnail = str_random().'.'.$input['thumbnail']->getClientOriginalExtension() : $namaThumbnail = null;
+
+        Article::create([
+            'title' => $input['title'],
+            'description' => $input['description'],
+            'slug' => $slug,
+            'thumbnail' => $namaThumbnail,
+            'publish_status' => 0,
+            'user_id' => Auth::user()->id
+        ]);
+
+        (isset($input['thumbnail'])) ? $input['thumbnail']->move(public_path('articles-thumbnail'), $namaThumbnail) : null ;
+
+        alert()->success('Berhasil Dikirim dan Menunggu Verifikasi !', '...');
 
         return back();
     }

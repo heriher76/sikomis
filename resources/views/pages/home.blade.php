@@ -3,39 +3,19 @@
 @section('contents')
 <div class="col-md-8 col-sm-12 col-xs-12">
     <div class="owl-carousel owl-theme slide" id="featured">
-        <div class="item active">
+        @foreach($highlightSliders as $key => $highlight)
+        <div class="item @if($key == 0) 'active' @endif">
             <article class="featured">
                 <div class="overlay"></div>
                 <figure>
-                    <img src="{{ url('slider/a.jpeg') }}" alt="Slider 1">
+                    <img src="{{ url('news-thumbnail/'.$highlight->thumbnail) }}" alt="Slider {{ $key+1 }}">
                 </figure>
                 <div class="details">
-                    <h1><a href="javascript:void();">Pembukaan Latihan Kader 1 HMI Komisariat Sains & Teknologi Cabang Kabupaten Bandung</a></h1>
+                    <h1><a href="{{ url($highlight->slug) }}">{{ $highlight->title }}</a></h1>
                 </div>
             </article>
         </div>
-        <div class="item">
-            <article class="featured">
-                <div class="overlay"></div>
-                <figure>
-                    <img src="{{ url('slider/b.jpg') }}" alt="Slider 2">
-                </figure>
-                <div class="details">
-                    <h1><a href="javascript:void();">BukBer Puasa Ramadhan Keluarga Besar HMI Komisariat Sains & Teknologi Cabang Kabupaten Bandung</a></h1>
-                </div>
-            </article>
-        </div>
-        <div class="item">
-            <article class="featured">
-                <div class="overlay"></div>
-                <figure>
-                    <img src="{{ url('slider/c.jpeg') }}" alt="Slider 3">
-                </figure>
-                <div class="details">
-                    <h1><a href="javascript:void();">Kajian Rutin Komisariat Sains & Teknologi di PUSGIT HMI Cabang Kabupaten Bandung</a></h1>
-                </div>
-            </article>
-        </div>
+        @endforeach
     </div>
 
     <div class="line">

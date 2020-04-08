@@ -59,7 +59,7 @@
 				<textarea class="form-control" name="jobs" placeholder="Pekerjaan">{{ $me->jobs }}</textarea>
 			</div>
 			<div class="form-group col-md-4">
-				<label for="photo-profile">Perbarui Foto Profil</label>
+				<label for="photo-profile">Perbarui Foto Profil *Max Size: 700 KB</label>
 				@if(isset($me->photoprofile))
                     <br>
                     <img class="img-responsive" style="max-width: 28vw; max-height: 28vh;" src="{{ url('photo-profile/'.$me->photoprofile) }}">
